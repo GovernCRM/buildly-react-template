@@ -7,6 +7,9 @@ Buildly React Template is a [React](https://reactjs.org/) web application that i
 
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
 
+Review latest changes from upstream github.com/buildlyio/buildly-react-template
+before making changes.
+
 ### Prerequisites
 
 The web application was tested and built with the following versions:

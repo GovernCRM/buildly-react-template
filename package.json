@@ -98,7 +98,7 @@
     "test-coverage": "jest --updateSnapshot --coverage",
     "serve": "./node_modules/.bin/serve -s dist",
     "lint": "eslint src/**/*.js"
-  },
+  }, 
   "jest": {
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js",

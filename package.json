@@ -13,7 +13,7 @@
     "@emotion/styled": "^11.8.1",
     "@mui/icons-material": "^5.5.0",
     "@mui/lab": "^5.0.0-alpha.122",
-    "@mui/material": "^5.5.0",
+    "@mui/material": "^5.5.0", 
     "@mui/styles": "^5.5.0",
     "@types/react": "^17.0.39",
     "@types/react-dom": "^17.0.13",
@@ -70,10 +70,10 @@
     "image-webpack-loader": "^4.6.0",
     "jest": "^23.6.0",
     "midgard-core": "^0.1.4",
-    "node-sass": "^6.0.1",
     "pngquant": "^4.2.0",
     "react-docgen": "^4.1.1",
     "react-docgen-typescript": "^1.12.4",
+    "sass": "^1.83.0",
     "sass-loader": "^10.2.0",
     "source-map-loader": "^0.2.4",
     "style-loader": "^0.23.1",
@@ -98,7 +98,7 @@
     "test-coverage": "jest --updateSnapshot --coverage",
     "serve": "./node_modules/.bin/serve -s dist",
     "lint": "eslint src/**/*.js"
-  },
+  }, 
   "jest": {
     "moduleNameMapper": {
       "\\.(css|less|scss)$": "<rootDir>/__mocks__/styleMock.js",

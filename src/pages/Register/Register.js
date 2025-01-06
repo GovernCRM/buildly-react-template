@@ -392,7 +392,7 @@ const Register = ({ history }) => {
                   <Link
                     to={routes.LOGIN}
                     variant="body2"
-                    color="primary"
+                    className="link"
                   >
                     Already have an account? Sign in
                   </Link>

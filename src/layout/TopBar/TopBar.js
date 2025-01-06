@@ -81,11 +81,13 @@ const TopBar = ({
         >
           <MenuIcon />
         </IconButton>
-        <img
-          src={logo}
-          className="topbarLogo"
-          alt="Company text logo"
-        />
+        <button type="button" onClick={() => history.push(routes.DASHBOARD)} className="topbar-logo-button">
+          <img
+            src={logo}
+            className="topbarLogo"
+            alt="Company text logo"
+          />
+        </button>
         <div className="topbarMenuRight">
           {isAdmin && (
             <IconButton

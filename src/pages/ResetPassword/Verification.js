@@ -10,7 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 import './ResetPasswordStyles.css';
-import logo from '@assets/buildly-logo.png';
+import logo from '@assets/governcrm-logo.png';
 import Copyright from '@components/Copyright/Copyright';
 import Loader from '@components/Loader/Loader';
 import useAlert from '@hooks/useAlert';

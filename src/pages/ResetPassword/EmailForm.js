@@ -10,7 +10,7 @@ import {
   Typography,
   Container,
 } from '@mui/material';
-import logo from '@assets/buildly-logo.png';
+import logo from '@assets/governcrm-logo.png';
 import Copyright from '@components/Copyright/Copyright';
 import Loader from '@components/Loader/Loader';
 import useAlert from '@hooks/useAlert';

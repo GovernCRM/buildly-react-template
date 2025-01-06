@@ -18,10 +18,13 @@ const theme = extendTheme({
           dark: '#383636',
         },
         primary: {
-          main: '#436B93',
+          main: '#780000',
         },
         secondary: {
-          main: '#F0CE7F',
+          main: '#F9D658',
+        },
+        tertiary: {
+          main: '#36436F',
         },
         success: {
           main: '#009900',
@@ -39,7 +42,7 @@ const theme = extendTheme({
     },
   },
   typography: {
-    fontFamily: 'IBM Plex Sans',
+    fontFamily: 'League Spartan',
     fontWeight: 400,
     color: '#000000 !important',
     button: {
@@ -48,26 +51,38 @@ const theme = extendTheme({
     h1: {
       fontWeight: 700,
       fontSize: '57px',
+      fontFamily: 'Baskerville SC',
+      color: '#36436F',
     },
     h2: {
       fontWeight: 700,
       fontSize: '45px',
+      fontFamily: 'Baskerville SC',
+      color: '#36436F',
     },
     h3: {
       fontWeight: 700,
       fontSize: '36px',
+      fontFamily: 'Baskerville SC',
+      color: '#36436F',
     },
     h4: {
       fontWeight: 700,
       fontSize: '32px',
+      fontFamily: 'Baskerville SC',
+      color: '#36436F',
     },
     h5: {
       fontWeight: 700,
       fontSize: '28px',
+      fontFamily: 'Baskerville SC',
+      color: '#36436F',
     },
     h6: {
       fontWeight: 700,
       fontSize: '24px',
+      fontFamily: 'Baskerville SC',
+      color: '#36436F',
     },
     subtitle1: {
       fontSize: '22px',

@@ -251,7 +251,7 @@ const NewPassword = ({ history, location }) => {
                   <Link
                     to={routes.LOGIN}
                     variant="body2"
-                    color="primary"
+                    className="Resetlink"
                   >
                     Go back to Sign in
                   </Link>

@@ -127,7 +127,7 @@ const EmailForm = ({ history }) => {
                   <Link
                     to={routes.LOGIN}
                     variant="body2"
-                    className="link"
+                    className="Resetlink"
                   >
                     Go back to Sign in
                   </Link>

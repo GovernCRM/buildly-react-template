@@ -47,7 +47,6 @@
 
 @media screen and (max-width: 600px) {
   .topbarAppBar {
-    height: 56px;
     overflow-x: auto;
   }
 }

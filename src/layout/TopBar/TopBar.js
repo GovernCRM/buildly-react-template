@@ -10,7 +10,7 @@ import {
   Menu as MenuIcon,
   Settings as SettingsIcon,
 } from '@mui/icons-material';
-import logo from '@assets/buildly-logo.png';
+import logo from '@assets/topbar-logo.png';
 import { getUser } from '@context/User.context';
 import { oauthService } from '@modules/oauth/oauth.service';
 import { routes } from '@routes/routesConstants';
@@ -81,11 +81,13 @@ const TopBar = ({
         >
           <MenuIcon />
         </IconButton>
-        <img
-          src={logo}
-          className="topbarLogo"
-          alt="Company text logo"
-        />
+        <button type="button" onClick={() => history.push(routes.DASHBOARD)} className="topbar-logo-button">
+          <img
+            src={logo}
+            className="topbarLogo"
+            alt="Company text logo"
+          />
+        </button>
         <div className="topbarMenuRight">
           {isAdmin && (
             <IconButton

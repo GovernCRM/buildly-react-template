@@ -15,7 +15,7 @@ import {
   FormControlLabel,
 } from '@mui/material';
 import { Visibility as VisibilityIcon, VisibilityOff as VisibilityOffIcon } from '@mui/icons-material';
-import logo from '@assets/buildly-logo.png';
+import logo from '@assets/governcrm-logo.png';
 import Copyright from '@components/Copyright/Copyright';
 import Loader from '@components/Loader/Loader';
 import useAlert from '@hooks/useAlert';
@@ -187,7 +187,7 @@ const Login = ({ history }) => {
                   <Link
                     to={routes.RESET_PASSWORD}
                     variant="body2"
-                    color="primary"
+                    className="link"
                   >
                     Forgot Password?
                   </Link>
@@ -196,7 +196,7 @@ const Login = ({ history }) => {
                   <Link
                     to={routes.REGISTER}
                     variant="body2"
-                    color="primary"
+                    className="link"
                   >
                     Don't have an account? Register
                   </Link>

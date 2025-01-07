@@ -1,8 +1,9 @@
 .topbarAppBar {
-  background-color: var(--color-palette-background-default);
+  background-color: var(--color-palette-background-secondary);
   z-index: 1201;
-  height: 64px;
+  height: 80px;
   overflow-x: auto;
+  padding: 8px 0px;
 }
 
 .topbarMenuButton {
@@ -36,9 +37,16 @@
   border: 1px solid var(--color-palette-background-light2);
 }
 
+.topbar-logo-button{
+  background:none;
+  border:none;
+  cursor: pointer;
+  padding: 0;
+  padding-top: 2px;
+}
+
 @media screen and (max-width: 600px) {
   .topbarAppBar {
-    height: 56px;
     overflow-x: auto;
   }
 }

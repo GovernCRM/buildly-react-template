@@ -9,17 +9,21 @@ import { routes } from '@routes/routesConstants';
 import { hasAdminRights, hasGlobalAdminRights } from '@utils/permissions';
 import { isMobile } from '@utils/mediaQuery';
 import './ContainerStyles.css';
+import Dashboard from '@pages/Dashboard/Dashboard';
+import Constituent from '@pages/Constituent/Constituent';
+import Relationship from '@pages/Relationship/Relationship';
+import Management from '@pages/Management/Management';
 
 const ContainerDashboard = ({ location, history }) => {
   const userData = getUser();
   const [navHidden, setNavHidden] = useState(false);
-  let subNavItems = [];
 
-  if (_.includes(location.pathname, 'profile')) {
-    subNavItems = [
-      { label: 'Dashboard', value: 'dashboard' },
-    ];
-  }
+  const subNavItems = [
+    { label: 'Dashboard', value: 'dashboard' },
+    { label: 'Constituent', value: 'constituent' },
+    { label: 'Relationship', value: 'relationship' },
+    { label: 'Management', value: 'management' },
+  ];
 
   return (
     <div className="containerRoot">
@@ -47,6 +51,22 @@ const ContainerDashboard = ({ location, history }) => {
                 component={UserManagement}
               />
             )}
+          <Route
+            path={routes.DASHBOARD}
+            component={Dashboard}
+          />
+          <Route
+            path={routes.CONSTITUENT}
+            component={Constituent}
+          />
+          <Route
+            path={routes.RELATIONSHIP}
+            component={Relationship}
+          />
+          <Route
+            path={routes.MANAGEMENT}
+            component={Management}
+          />
         </Container>
       </UserContext.Provider>
     </div>

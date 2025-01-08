@@ -11,7 +11,7 @@ import {
   Menu as MenuIcon,
   Settings as SettingsIcon,
 } from '@mui/icons-material';
-import logo from '@assets/topbar-logo.png';
+import logo from '@assets/topbar2-logo.png';
 import { getUser } from '@context/User.context';
 import { oauthService } from '@modules/oauth/oauth.service';
 import { routes } from '@routes/routesConstants';

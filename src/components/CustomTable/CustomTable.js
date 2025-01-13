@@ -60,7 +60,7 @@ const CustomTable = () => (
               justifyContent: 'center',
               alignItems: 'center',
               padding: '16px',
-              backgroundColor: '#fbc02d',
+              backgroundColor: '#F9D658',
               width: '100%',
             }}
           >
@@ -70,13 +70,12 @@ const CustomTable = () => (
       }}
       sx={{
         '& .MuiDataGrid-columnHeaders': {
-          backgroundColor: '#8b0000',
+          backgroundColor: '#780000 ',
           color: '#fff',
           fontWeight: 'bold',
           border: '1px solid #000',
         },
         '& .MuiDataGrid-cell': {
-          backgroundColor: '#fff',
           border: '1px solid #ddd',
         },
         '& .MuiDataGrid-row': {

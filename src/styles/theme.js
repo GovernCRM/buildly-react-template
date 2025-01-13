@@ -26,7 +26,7 @@ const theme = extendTheme({
           main: '#F9D658',
         },
         tertiary: {
-          main: '#36436F',
+          main: '#003049',
         },
         success: {
           main: '#009900',
@@ -54,37 +54,37 @@ const theme = extendTheme({
       fontWeight: 700,
       fontSize: '57px',
       fontFamily: 'Baskerville SC',
-      color: '#36436F',
+      color: '#003049',
     },
     h2: {
       fontWeight: 700,
       fontSize: '45px',
       fontFamily: 'Baskerville SC',
-      color: '#36436F',
+      color: '#003049',
     },
     h3: {
       fontWeight: 700,
       fontSize: '36px',
       fontFamily: 'Baskerville SC',
-      color: '#36436F',
+      color: '#003049',
     },
     h4: {
       fontWeight: 700,
       fontSize: '32px',
       fontFamily: 'Baskerville SC',
-      color: '#36436F',
+      color: '#003049',
     },
     h5: {
       fontWeight: 700,
       fontSize: '28px',
       fontFamily: 'Baskerville SC',
-      color: '#36436F',
+      color: '#003049',
     },
     h6: {
       fontWeight: 700,
       fontSize: '24px',
       fontFamily: 'Baskerville SC',
-      color: '#36436F',
+      color: '#003049',
     },
     subtitle1: {
       fontSize: '22px',

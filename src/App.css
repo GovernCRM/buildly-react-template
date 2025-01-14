@@ -1,0 +1,12 @@
+@font-face {
+    font-family: 'Baskerville SC';
+    src: url('/fonts/BaskervvilleSC-Regular.woff2') format('woff2'),
+         url('/fonts/BaskervvilleSC-Regular.woff') format('woff'),
+         url('/fonts/BaskervvilleSC-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+  
+body{
+    font-family: 'Baskerville SC', sans-serif;
+}  

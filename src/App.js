@@ -25,6 +25,7 @@ import {
   Experimental_CssVarsProvider as CssVarsProvider,
 } from '@mui/material/styles';
 import Dashboard from '@pages/Dashboard/Dashboard';
+import './App.css';
 
 const App = () => (
   <Router>

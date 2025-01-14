@@ -5,6 +5,7 @@ import './i18n';
 import registerServiceWorker from './serviceWorkerRegistration';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
+import './styles/GlobalStyles.css';
 
 const queryClient = new QueryClient();
 

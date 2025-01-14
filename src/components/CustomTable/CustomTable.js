@@ -76,6 +76,7 @@ const CustomTable = () => (
           border: '1px solid #000',
         },
         '& .MuiDataGrid-cell': {
+          backgroundColor: '#fff',
           border: '1px solid #ddd',
         },
         '& .MuiDataGrid-row': {

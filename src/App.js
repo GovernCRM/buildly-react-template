@@ -24,6 +24,7 @@ import theme from '@styles/theme';
 import {
   Experimental_CssVarsProvider as CssVarsProvider,
 } from '@mui/material/styles';
+import Dashboard from '@pages/Dashboard/Dashboard';
 
 const App = () => (
   <Router>
@@ -37,7 +38,7 @@ const App = () => (
               path="/"
               render={() => (
                 oauthService.hasValidAccessToken()
-                  ? <Redirect to={routes.SHIPMENT} />
+                  ? <Redirect to={routes.DASHBOARD} />
                   : <Redirect to={routes.LOGIN} />
               )}
             />

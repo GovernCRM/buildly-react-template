@@ -10,4 +10,9 @@ const useStore = create((set) => ({
   },
 }));
 
-export { useStore };
+const useTabStore = create((set) => ({
+  activeTab: 'Dashboard', // Default tab
+  setActiveTab: (tab) => set({ activeTab: tab }),
+}));
+
+export { useStore, useTabStore };

@@ -4,13 +4,14 @@ import {
   AppBar,
   Toolbar,
   IconButton,
+  Typography,
 } from '@mui/material';
 import {
   AccountCircle,
   Menu as MenuIcon,
   Settings as SettingsIcon,
 } from '@mui/icons-material';
-import logo from '@assets/topbar-logo.png';
+import logo from '@assets/topbar2-logo.png';
 import { getUser } from '@context/User.context';
 import { oauthService } from '@modules/oauth/oauth.service';
 import { routes } from '@routes/routesConstants';
@@ -18,15 +19,18 @@ import { hasAdminRights, hasGlobalAdminRights } from '@utils/permissions';
 import AdminMenu from './AdminMenu';
 import AccountMenu from './AccountMenu';
 import './TopBarStyles.css';
+import { useTabStore } from '@zustand/alert/alertStore';
 
 const TopBar = ({
   navHidden,
   setNavHidden,
   history,
+  options,
 }) => {
   const [anchorEl, setAnchorEl] = useState(null);
   const [settingEl, setSettingEl] = useState(null);
   const [organization, setOrganization] = useState(null);
+  const { activeTab, setActiveTab } = useTabStore();
 
   const user = getUser();
   let isAdmin = false;
@@ -89,6 +93,7 @@ const TopBar = ({
           />
         </button>
         <div className="topbarMenuRight">
+          {options.map((tab) => <Typography sx={{ display: { xs: 'none', md: 'block' } }} variant="subtitle2" className={`topbarheading ${activeTab === tab.label ? 'activetabstyle' : ''}`} onClick={() => { history.push(routes[tab.value.toUpperCase()]); setActiveTab(tab.label); }}>{tab.label}</Typography>)}
           {isAdmin && (
             <IconButton
               aria-label="admin section"

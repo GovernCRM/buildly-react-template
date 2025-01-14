@@ -1,11 +1,12 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Box, Typography } from '@mui/material';
 import './DashboardStyles.css';
+import CustomTable from '@components/CustomTable/CustomTable';
 
 const Dashboard = () => (
-  <Typography variant="body1" className="dashboardRoot">
-    Welcome to the Buildly Dashboard
-  </Typography>
+  <Box mt={5} mb={5}>
+    <CustomTable />
+  </Box>
 );
 
 export default Dashboard;

@@ -53,7 +53,7 @@ const theme = extendTheme({
     h1: {
       fontWeight: 700,
       fontSize: '57px',
-      fontFamily: 'Baskerville SC',
+      fontFamily: 'Baskervville SC',
       color: '#003049',
     },
     h2: {

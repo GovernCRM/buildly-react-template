@@ -105,15 +105,15 @@ const Login = ({ history }) => {
       {(isPasswordCheck || islogin) && <Loader open={isPasswordCheck || islogin} />}
       <CssBaseline />
       <Card variant="outlined">
-        <CardContent>
+        <CardContent className="yellow-background">
           <div className="loginPaper">
             <img
               src={logo}
               className="loginLogo"
               alt="Company logo"
             />
-            <Typography component="h1" variant="h5">
-              Sign in
+            <Typography component="h1" variant="h5" className="baskervville-sc-regular">
+              Sign In
             </Typography>
             <form
               className="loginForm"
@@ -180,7 +180,7 @@ const Login = ({ history }) => {
                 style={{ marginTop: 8, marginBottom: 16 }}
                 disabled={isPasswordCheck || islogin || submitDisabled()}
               >
-                Sign in
+                Sign In
               </Button>
               <Grid container alignItems="center">
                 <Grid item xs={4} style={{ textAlign: 'start' }}>

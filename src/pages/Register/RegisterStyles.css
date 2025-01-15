@@ -41,3 +41,8 @@
 .Registerlink{
   color: #003049 !important;
 }
+
+.registerTextField input:-webkit-autofill {
+  background-color: var(--color-palette-background-secondary) !important;
+  transition: background-color 5000s ease-in-out 0s !important; /* Prevent flashing */
+}

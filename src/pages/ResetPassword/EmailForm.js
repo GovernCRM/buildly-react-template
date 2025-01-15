@@ -78,14 +78,14 @@ const EmailForm = ({ history }) => {
       {isResetPassword && <Loader open={isResetPassword} />}
       <CssBaseline />
       <Card variant="outlined">
-        <CardContent>
+        <CardContent className="yellow-background">
           <div className="resetPasswordPaper">
             <img
               src={logo}
               className="resetPasswordLogo"
               alt="Company logo"
             />
-            <Typography component="h1" variant="h5" gutterBottom>
+            <Typography component="h1" variant="h5" gutterBottom className="baskervville-sc-regular">
               Enter your registered Email
             </Typography>
             <form

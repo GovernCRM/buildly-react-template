@@ -169,14 +169,14 @@ const Register = ({ history }) => {
         )}
       <CssBaseline />
       <Card variant="outlined">
-        <CardContent>
+        <CardContent className="yellow-background">
           <div className="registerPaper">
             <img
               src={logo}
               className="registerLogo"
               alt="Company logo"
             />
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" className="baskervville-sc-regular">
               Register
             </Typography>
             <form

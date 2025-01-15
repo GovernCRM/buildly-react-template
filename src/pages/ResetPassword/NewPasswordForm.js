@@ -130,7 +130,7 @@ const NewPassword = ({ history, location }) => {
               className="resetPasswordLogo"
               alt="Company logo"
             />
-            <Typography component="h1" variant="h5">
+            <Typography component="h1" variant="h5" className="baskervville-sc-regular">
               Reset your Password
             </Typography>
             <form

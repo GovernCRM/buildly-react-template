@@ -1,0 +1,8 @@
+.baskervville-sc-regular {
+    font-family: "Baskervville SC", serif;
+    font-style: normal;
+}
+
+.yellow-background{
+    background-color: var(--color-palette-background-secondary);
+}

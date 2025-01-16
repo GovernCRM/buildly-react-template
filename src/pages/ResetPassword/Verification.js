@@ -10,7 +10,7 @@ import {
   Typography,
 } from '@mui/material';
 import './ResetPasswordStyles.css';
-import logo from '@assets/governcrm-logo.png';
+import logo from '@assets/governcrm1-logo.png';
 import Copyright from '@components/Copyright/Copyright';
 import Loader from '@components/Loader/Loader';
 import useAlert from '@hooks/useAlert';
@@ -65,70 +65,72 @@ const Verification = ({ location }) => {
   };
 
   return (
-    <Container
-      component="main"
-      maxWidth="xs"
-      className="verificationContainer"
-    >
-      {isResetPassword && <Loader open={isResetPassword} />}
-      <CssBaseline />
-      <Card variant="outlined">
-        <CardContent>
-          <div className="verificationPaper">
-            <img
-              src={logo}
-              className="resetPasswordLogo"
-              alt="Company logo"
-            />
-            <Typography component="h1" variant="h5" gutterBottom textAlign="center">
-              Email Sent Successfully
-            </Typography>
-            <Typography variant="body" gutterBottom textAlign="center">
-              An email has been sent for verification. Click on the link in the email to change
-              your 'Password'. Please check your junk/spam mail as well.
-            </Typography>
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              color="primary"
-              className="verificationButton"
-              onClick={handleResendVerification}
-              disabled={isDisabled || attempts <= 0}
-            >
-              Resend Verification Email
-            </Button>
-            <Grid container>
-              <Grid item xs={11}>
-                <Typography variant="body" fontSize={11} textAlign="left">
-                  Total Attempts Remaining:
-                  {' '}
-                  {attempts}
-                </Typography>
-              </Grid>
-              <Grid item xs={1}>
-                {isDisabled && attempts > 0 && (
-                  <Typography variant="body" fontSize={11} textAlign="right">
-                    {formatTime(countdown)}
+    <Container className="yellow-background" maxWidth="xl">
+      <Container
+        component="main"
+        maxWidth="xs"
+        className="verificationContainer"
+      >
+        {isResetPassword && <Loader open={isResetPassword} />}
+        <CssBaseline />
+        <Card variant="outlined">
+          <CardContent>
+            <div className="verificationPaper">
+              <img
+                src={logo}
+                className="resetPasswordLogo"
+                alt="Company logo"
+              />
+              <Typography component="h1" variant="h5" gutterBottom textAlign="center">
+                Email Sent Successfully
+              </Typography>
+              <Typography variant="body" gutterBottom textAlign="center">
+                An email has been sent for verification. Click on the link in the email to change
+                your 'Password'. Please check your junk/spam mail as well.
+              </Typography>
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                color="tertiary"
+                className="verificationButton"
+                onClick={handleResendVerification}
+                disabled={isDisabled || attempts <= 0}
+              >
+                Resend Verification Email
+              </Button>
+              <Grid container>
+                <Grid item xs={11}>
+                  <Typography variant="body" fontSize={11} textAlign="left">
+                    Total Attempts Remaining:
+                    {' '}
+                    {attempts}
                   </Typography>
-                )}
+                </Grid>
+                <Grid item xs={1}>
+                  {isDisabled && attempts > 0 && (
+                    <Typography variant="body" fontSize={11} textAlign="right">
+                      {formatTime(countdown)}
+                    </Typography>
+                  )}
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid container mt={1}>
-              <Grid item xs>
-                <Link
-                  to={routes.LOGIN}
-                  variant="body2"
-                  className="Resetlink"
-                >
-                  Go back to Sign in
-                </Link>
+              <Grid container mt={1}>
+                <Grid item xs>
+                  <Link
+                    to={routes.LOGIN}
+                    variant="body2"
+                    className="Resetlink"
+                  >
+                    Go back to Sign in
+                  </Link>
+                </Grid>
               </Grid>
-            </Grid>
-          </div>
-        </CardContent>
-      </Card>
-      <Copyright />
+            </div>
+          </CardContent>
+        </Card>
+        <Copyright />
+      </Container>
     </Container>
   );
 };

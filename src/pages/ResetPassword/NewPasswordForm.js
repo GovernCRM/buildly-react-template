@@ -13,7 +13,7 @@ import {
   IconButton,
 } from '@mui/material';
 import { Visibility as VisibilityIcon, VisibilityOff as VisibilityOffIcon } from '@mui/icons-material';
-import logo from '@assets/governcrm-logo.png';
+import logo from '@assets/governcrm1-logo.png';
 import Copyright from '@components/Copyright/Copyright';
 import Loader from '@components/Loader/Loader';
 import useAlert from '@hooks/useAlert';
@@ -115,153 +115,155 @@ const NewPassword = ({ history, location }) => {
   };
 
   return (
-    <Container
-      component="main"
-      maxWidth="xs"
-      className="resetPasswordContainer"
-    >
-      {isResetPasswordConfirm && <Loader open={isResetPasswordConfirm} />}
-      <CssBaseline />
-      <Card variant="outlined">
-        <CardContent>
-          <div className="resetPasswordPaper">
-            <img
-              src={logo}
-              className="resetPasswordLogo"
-              alt="Company logo"
-            />
-            <Typography component="h1" variant="h5" className="baskervville-sc-regular">
-              Reset your Password
-            </Typography>
-            <form
-              className="resetPasswordForm"
-              noValidate
-              onSubmit={handleSubmit}
-            >
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="New Password"
-                type={showPassword ? 'text' : 'password'}
-                id="password"
-                autoComplete="current-password"
-                className="resetPasswordTextField"
-                value={password}
-                onChange={(e) => {
-                  setPassword(e.target.value);
-                  validatePassword(e.target.value);
-                }}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => setShowPassword(!showPassword)}
-                        onMouseDown={(e) => e.preventDefault()}
-                      >
-                        {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
+    <Container className="yellow-background" maxWidth="xl">
+      <Container
+        component="main"
+        maxWidth="xs"
+        className="resetPasswordContainer"
+      >
+        {isResetPasswordConfirm && <Loader open={isResetPasswordConfirm} />}
+        <CssBaseline />
+        <Card variant="outlined">
+          <CardContent>
+            <div className="resetPasswordPaper">
+              <img
+                src={logo}
+                className="resetPasswordLogo"
+                alt="Company logo"
               />
-              <Typography
-                mt={-3}
-                className={validations.length === true
+              <Typography component="h1" variant="h5" className="baskervville-sc-regular">
+                Reset your Password
+              </Typography>
+              <form
+                className="resetPasswordForm"
+                noValidate
+                onSubmit={handleSubmit}
+              >
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="New Password"
+                  type={showPassword ? 'text' : 'password'}
+                  id="password"
+                  autoComplete="current-password"
+                  className="resetPasswordTextField"
+                  value={password}
+                  onChange={(e) => {
+                    setPassword(e.target.value);
+                    validatePassword(e.target.value);
+                  }}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowPassword(!showPassword)}
+                          onMouseDown={(e) => e.preventDefault()}
+                        >
+                          {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                <Typography
+                  mt={-3}
+                  className={validations.length === true
+                    ? 'resetPasswordValidText'
+                    : 'resetPasswordInvalidText'}
+                >
+                  {validations.length === true ? '✓' : '✗'}
+                  {' '}
+                  10-alphanumeric character length
+                </Typography>
+                <Typography className={validations.upperCase === true && validations.lowerCase === true
                   ? 'resetPasswordValidText'
                   : 'resetPasswordInvalidText'}
-              >
-                {validations.length === true ? '✓' : '✗'}
-                {' '}
-                10-alphanumeric character length
-              </Typography>
-              <Typography className={validations.upperCase === true && validations.lowerCase === true
-                ? 'resetPasswordValidText'
-                : 'resetPasswordInvalidText'}
-              >
-                {validations.upperCase === true && validations.lowerCase === true ? '✓' : '✗'}
-                {' '}
-                Uppercase and lowercase letters
-              </Typography>
-              <Typography className={validations.digit === true
-                ? 'resetPasswordValidText'
-                : 'resetPasswordInvalidText'}
-              >
-                {validations.digit === true ? '✓' : '✗'}
-                {' '}
-                At least 1 digit number
-              </Typography>
-              <Typography className={validations.special === true
-                ? 'resetPasswordValidText'
-                : 'resetPasswordInvalidText'}
-              >
-                {validations.special === true ? '✓' : '✗'}
-                {' '}
-                At least 1 special character (!@#$%^&*, etc.)
-              </Typography>
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="re_password"
-                label="Confirm Password"
-                name="re_password"
-                type={showConfirmPassword ? 'text' : 'password'}
-                autoComplete="re_password"
-                className="resetPasswordTextField"
-                error={
-                  formError.re_password
-                  && formError.re_password.error
-                }
-                helperText={
-                  formError.re_password
-                    ? formError.re_password.message
-                    : ''
-                }
-                onBlur={(e) => handleBlur(e, 'confirm', re_password)}
-                {...re_password.bind}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                        onMouseDown={(e) => e.preventDefault()}
-                      >
-                        {showConfirmPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                style={{ marginTop: 8, marginBottom: 16 }}
-                disabled={isResetPasswordConfirm || submitDisabled()}
-              >
-                Submit
-              </Button>
-              <Grid container>
-                <Grid item>
-                  <Link
-                    to={routes.LOGIN}
-                    variant="body2"
-                    className="Resetlink"
-                  >
-                    Go back to Sign in
-                  </Link>
+                >
+                  {validations.upperCase === true && validations.lowerCase === true ? '✓' : '✗'}
+                  {' '}
+                  Uppercase and lowercase letters
+                </Typography>
+                <Typography className={validations.digit === true
+                  ? 'resetPasswordValidText'
+                  : 'resetPasswordInvalidText'}
+                >
+                  {validations.digit === true ? '✓' : '✗'}
+                  {' '}
+                  At least 1 digit number
+                </Typography>
+                <Typography className={validations.special === true
+                  ? 'resetPasswordValidText'
+                  : 'resetPasswordInvalidText'}
+                >
+                  {validations.special === true ? '✓' : '✗'}
+                  {' '}
+                  At least 1 special character (!@#$%^&*, etc.)
+                </Typography>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="re_password"
+                  label="Confirm Password"
+                  name="re_password"
+                  type={showConfirmPassword ? 'text' : 'password'}
+                  autoComplete="re_password"
+                  className="resetPasswordTextField"
+                  error={
+                    formError.re_password
+                    && formError.re_password.error
+                  }
+                  helperText={
+                    formError.re_password
+                      ? formError.re_password.message
+                      : ''
+                  }
+                  onBlur={(e) => handleBlur(e, 'confirm', re_password)}
+                  {...re_password.bind}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                          onMouseDown={(e) => e.preventDefault()}
+                        >
+                          {showConfirmPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="tertiary"
+                  style={{ marginTop: 8, marginBottom: 16, color: 'white' }}
+                  disabled={isResetPasswordConfirm || submitDisabled()}
+                >
+                  Submit
+                </Button>
+                <Grid container>
+                  <Grid item>
+                    <Link
+                      to={routes.LOGIN}
+                      variant="body2"
+                      className="Resetlink"
+                    >
+                      Go back to Sign in
+                    </Link>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </form>
-          </div>
-        </CardContent>
-      </Card>
-      <Copyright />
+              </form>
+            </div>
+          </CardContent>
+        </Card>
+        <Copyright />
+      </Container>
     </Container>
   );
 };

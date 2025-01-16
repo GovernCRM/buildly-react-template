@@ -10,7 +10,7 @@ import {
   Typography,
   Container,
 } from '@mui/material';
-import logo from '@assets/governcrm-logo.png';
+import logo from '@assets/governcrm1-logo.png';
 import Copyright from '@components/Copyright/Copyright';
 import Loader from '@components/Loader/Loader';
 import useAlert from '@hooks/useAlert';
@@ -70,74 +70,76 @@ const EmailForm = ({ history }) => {
   };
 
   return (
-    <Container
-      component="main"
-      maxWidth="xs"
-      className="resetPasswordContainer"
-    >
-      {isResetPassword && <Loader open={isResetPassword} />}
-      <CssBaseline />
-      <Card variant="outlined">
-        <CardContent className="yellow-background">
-          <div className="resetPasswordPaper">
-            <img
-              src={logo}
-              className="resetPasswordLogo"
-              alt="Company logo"
-            />
-            <Typography component="h1" variant="h5" gutterBottom className="baskervville-sc-regular">
-              Enter your registered Email
-            </Typography>
-            <form
-              className="resetPasswordForm"
-              noValidate
-              onSubmit={handleSubmit}
-            >
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="email"
-                label="Registered email"
-                name="email"
-                autoComplete="email"
-                className="resetPasswordTextField"
-                error={error.email && error.email.error}
-                helperText={
-                  error && error.email
-                    ? error.email.message
-                    : ''
-                }
-                onBlur={(e) => handleBlur(e, 'email', email)}
-                {...email.bind}
+    <Container className="yellow-background" maxWidth="xl">
+      <Container
+        component="main"
+        maxWidth="xs"
+        className="resetPasswordContainer"
+      >
+        {isResetPassword && <Loader open={isResetPassword} />}
+        <CssBaseline />
+        <Card variant="outlined">
+          <CardContent>
+            <div className="resetPasswordPaper">
+              <img
+                src={logo}
+                className="resetPasswordLogo"
+                alt="Company logo"
               />
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                style={{ marginTop: 8, marginBottom: 16 }}
-                disabled={isResetPassword || submitDisabled()}
+              <Typography component="h1" variant="h5" gutterBottom className="baskervville-sc-regular">
+                Enter your registered Email
+              </Typography>
+              <form
+                className="resetPasswordForm"
+                noValidate
+                onSubmit={handleSubmit}
               >
-                Submit
-              </Button>
-              <Grid container>
-                <Grid item xs>
-                  <Link
-                    to={routes.LOGIN}
-                    variant="body2"
-                    className="Resetlink"
-                  >
-                    Go back to Sign in
-                  </Link>
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="email"
+                  label="Registered email"
+                  name="email"
+                  autoComplete="email"
+                  className="resetPasswordTextField"
+                  error={error.email && error.email.error}
+                  helperText={
+                    error && error.email
+                      ? error.email.message
+                      : ''
+                  }
+                  onBlur={(e) => handleBlur(e, 'email', email)}
+                  {...email.bind}
+                />
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="tertiary"
+                  style={{ marginTop: 8, marginBottom: 16, color: 'white' }}
+                  disabled={isResetPassword || submitDisabled()}
+                >
+                  Submit
+                </Button>
+                <Grid container>
+                  <Grid item xs>
+                    <Link
+                      to={routes.LOGIN}
+                      variant="body2"
+                      className="Resetlink"
+                    >
+                      Go back to Sign in
+                    </Link>
+                  </Grid>
                 </Grid>
-              </Grid>
-            </form>
-          </div>
-        </CardContent>
-      </Card>
-      <Copyright />
+              </form>
+            </div>
+          </CardContent>
+        </Card>
+        <Copyright />
+      </Container>
     </Container>
   );
 };

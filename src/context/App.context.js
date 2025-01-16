@@ -1,7 +1,7 @@
 import React from 'react';
 
 export const app = {
-  title: 'Buildly',
+  title: 'Govern CRM',
 };
 
 export const AppContext = React.createContext(app);

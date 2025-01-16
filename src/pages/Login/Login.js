@@ -15,7 +15,7 @@ import {
   FormControlLabel,
 } from '@mui/material';
 import { Visibility as VisibilityIcon, VisibilityOff as VisibilityOffIcon } from '@mui/icons-material';
-import logo from '@assets/governcrm-logo.png';
+import logo from '@assets/governcrm1-logo.png';
 import Copyright from '@components/Copyright/Copyright';
 import Loader from '@components/Loader/Loader';
 import useAlert from '@hooks/useAlert';
@@ -97,116 +97,118 @@ const Login = ({ history }) => {
   };
 
   return (
-    <Container
-      component="main"
-      maxWidth="xs"
-      className="loginContainer"
-    >
-      {(isPasswordCheck || islogin) && <Loader open={isPasswordCheck || islogin} />}
-      <CssBaseline />
-      <Card variant="outlined">
-        <CardContent className="yellow-background">
-          <div className="loginPaper">
-            <img
-              src={logo}
-              className="loginLogo"
-              alt="Company logo"
-            />
-            <Typography component="h1" variant="h5" className="baskervville-sc-regular">
-              Sign In
-            </Typography>
-            <form
-              className="loginForm"
-              noValidate
-              onSubmit={handleSubmit}
-            >
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                id="usrename"
-                label="Username"
-                name="username"
-                autoComplete="username"
-                error={isLoginError || (error.username && error.username.error)}
-                helperText={error && error.username ? error.username.message : ''}
-                className="loginTextField"
-                onBlur={(e) => handleBlur(e, 'required', username)}
-                {...username.bind}
+    <Container className="yellow-background" maxWidth="xl">
+      <Container
+        component="main"
+        maxWidth="xs"
+        className="loginContainer"
+      >
+        {(isPasswordCheck || islogin) && <Loader open={isPasswordCheck || islogin} />}
+        <CssBaseline />
+        <Card variant="outlined">
+          <CardContent>
+            <div className="loginPaper">
+              <img
+                src={logo}
+                className="loginLogo"
+                alt="Company logo"
               />
-              <TextField
-                variant="outlined"
-                margin="normal"
-                required
-                fullWidth
-                name="password"
-                label="Password"
-                type={showPassword ? 'text' : 'password'}
-                id="password"
-                autoComplete="current-password"
-                error={isLoginError || (error.password && error.password.error)}
-                helperText={
-                  error && error.password
-                    ? error.password.message
-                    : ''
-                }
-                className="loginTextField"
-                onBlur={(e) => handleBlur(e, 'required', password)}
-                {...password.bind}
-                InputProps={{
-                  endAdornment: (
-                    <InputAdornment position="end">
-                      <IconButton
-                        onClick={() => setShowPassword(!showPassword)}
-                        onMouseDown={(e) => e.preventDefault()}
-                      >
-                        {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                      </IconButton>
-                    </InputAdornment>
-                  ),
-                }}
-              />
-              {isLoginError && (
-                <Typography className="loginErrorText">
-                  Incorrect username or password. Try again!
-                </Typography>
-              )}
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                style={{ marginTop: 8, marginBottom: 16 }}
-                disabled={isPasswordCheck || islogin || submitDisabled()}
-              >
+              <Typography component="h1" variant="h5" className="baskervville-sc-regular">
                 Sign In
-              </Button>
-              <Grid container alignItems="center">
-                <Grid item xs={4} style={{ textAlign: 'start' }}>
-                  <Link
-                    to={routes.RESET_PASSWORD}
-                    variant="body2"
-                    className="link"
-                  >
-                    Forgot Password?
-                  </Link>
+              </Typography>
+              <form
+                className="loginForm"
+                noValidate
+                onSubmit={handleSubmit}
+              >
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  id="usrename"
+                  label="Username"
+                  name="username"
+                  autoComplete="username"
+                  error={isLoginError || (error.username && error.username.error)}
+                  helperText={error && error.username ? error.username.message : ''}
+                  className="loginTextField"
+                  onBlur={(e) => handleBlur(e, 'required', username)}
+                  {...username.bind}
+                />
+                <TextField
+                  variant="outlined"
+                  margin="normal"
+                  required
+                  fullWidth
+                  name="password"
+                  label="Password"
+                  type={showPassword ? 'text' : 'password'}
+                  id="password"
+                  autoComplete="current-password"
+                  error={isLoginError || (error.password && error.password.error)}
+                  helperText={
+                    error && error.password
+                      ? error.password.message
+                      : ''
+                  }
+                  className="loginTextField"
+                  onBlur={(e) => handleBlur(e, 'required', password)}
+                  {...password.bind}
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton
+                          onClick={() => setShowPassword(!showPassword)}
+                          onMouseDown={(e) => e.preventDefault()}
+                        >
+                          {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                />
+                {isLoginError && (
+                  <Typography className="loginErrorText">
+                    Incorrect username or password. Try again!
+                  </Typography>
+                )}
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="tertiary"
+                  style={{ marginTop: 8, marginBottom: 16, color: 'white' }}
+                  disabled={isPasswordCheck || islogin || submitDisabled()}
+                >
+                  Sign In
+                </Button>
+                <Grid container alignItems="center">
+                  <Grid item xs={4} style={{ textAlign: 'start' }}>
+                    <Link
+                      to={routes.RESET_PASSWORD}
+                      variant="body2"
+                      className="link"
+                    >
+                      Forgot Password?
+                    </Link>
+                  </Grid>
+                  <Grid item xs={8} style={{ textAlign: 'end' }}>
+                    <Link
+                      to={routes.REGISTER}
+                      variant="body2"
+                      className="link"
+                    >
+                      Don't have an account? Register
+                    </Link>
+                  </Grid>
                 </Grid>
-                <Grid item xs={8} style={{ textAlign: 'end' }}>
-                  <Link
-                    to={routes.REGISTER}
-                    variant="body2"
-                    className="link"
-                  >
-                    Don't have an account? Register
-                  </Link>
-                </Grid>
-              </Grid>
-            </form>
-          </div>
-        </CardContent>
-      </Card>
-      <Copyright />
+              </form>
+            </div>
+          </CardContent>
+        </Card>
+        <Copyright />
+      </Container>
     </Container>
   );
 };

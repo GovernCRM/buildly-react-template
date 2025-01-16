@@ -14,7 +14,7 @@ import {
   IconButton,
 } from '@mui/material';
 import { Visibility as VisibilityIcon, VisibilityOff as VisibilityOffIcon } from '@mui/icons-material';
-import logo from '@assets/governcrm-logo.png';
+import logo from '@assets/governcrm1-logo.png';
 import Copyright from '@components/Copyright/Copyright';
 import Loader from '@components/Loader/Loader';
 import { useInput } from '@hooks/useInput';
@@ -155,254 +155,257 @@ const Register = ({ history }) => {
   };
 
   return (
-    <Container
-      component="main"
-      maxWidth="sm"
-      className="registerContainer"
-    >
-      {(isLoadingInviteTokenCheck
-        || isRegister)
-        && (
-          <Loader open={isLoadingInviteTokenCheck
-            || isRegister}
-          />
-        )}
-      <CssBaseline />
-      <Card variant="outlined">
-        <CardContent className="yellow-background">
-          <div className="registerPaper">
-            <img
-              src={logo}
-              className="registerLogo"
-              alt="Company logo"
+    <Container className="yellow-background" maxWidth="xl">
+      <Container
+        component="main"
+        maxWidth="sm"
+        className="registerContainer"
+      >
+        {(isLoadingInviteTokenCheck
+          || isRegister)
+          && (
+            <Loader open={isLoadingInviteTokenCheck
+              || isRegister}
             />
-            <Typography component="h1" variant="h5" className="baskervville-sc-regular">
-              Register
-            </Typography>
-            <form
-              className="registerForm"
-              noValidate
-              onSubmit={handleSubmit}
-            >
-              <Grid container spacing={isTablet() ? 0 : 3}>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="first_name"
-                    label="First Name"
-                    name="first_name"
-                    autoComplete="first_name"
-                    error={
-                      formError.first_name
-                      && formError.first_name.error
-                    }
-                    helperText={
-                      formError.first_name
-                        ? formError.first_name.message
-                        : ''
-                    }
-                    className="registerTextField"
-                    onBlur={(e) => handleBlur(e, 'required', first_name)}
-                    {...first_name.bind}
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    fullWidth
-                    id="last_name"
-                    label="Last Name"
-                    name="last_name"
-                    autoComplete="last_name"
-                    error={
-                      formError.last_name
-                      && formError.last_name.error
-                    }
-                    helperText={
-                      formError.last_name
-                        ? formError.last_name.message
-                        : ''
-                    }
-                    className="registerTextField"
-                    onBlur={(e) => handleBlur(e)}
-                    {...last_name.bind}
-                  />
-                </Grid>
-              </Grid>
-              <Grid container spacing={isTablet() ? 0 : 3}>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    fullWidth
-                    label="Username"
-                    type="text"
-                    className="registerTextField"
-                    {...username.bind}
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    fullWidth
-                    label="Email"
-                    type="email"
-                    className="registerTextField"
-                    disabled={!!inviteToken}
-                    {...email.bind}
-                  />
-                </Grid>
-              </Grid>
-              <Grid container spacing={isTablet() ? 0 : 3}>
-                <Grid item xs={12}>
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    fullWidth
-                    label="Organization Name"
-                    className="registerTextField"
-                    disabled={!!inviteToken}
-                    {...organization_name.bind}
-                  />
-                </Grid>
-              </Grid>
-              <Grid container spacing={isTablet() ? 0 : 3}>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    name="password"
-                    label="Password"
-                    type={showPassword ? 'text' : 'password'}
-                    id="password"
-                    autoComplete="current-password"
-                    className="registerTextField"
-                    value={password.value}
-                    onChange={(e) => {
-                      password.setValue(e.target.value);
-                      validatePassword(e.target.value);
-                    }}
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton
-                            onClick={() => setShowPassword(!showPassword)}
-                            onMouseDown={(e) => e.preventDefault()}
-                          >
-                            {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                          </IconButton>
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                </Grid>
-                <Grid item xs={12} md={6}>
-                  <TextField
-                    variant="outlined"
-                    margin="normal"
-                    required
-                    fullWidth
-                    id="re_password"
-                    label="Confirm Password"
-                    name="re_password"
-                    type={showConfirmPassword ? 'text' : 'password'}
-                    autoComplete="re_password"
-                    className="registerTextField"
-                    error={
-                      formError.re_password
-                      && formError.re_password.error
-                    }
-                    helperText={
-                      formError.re_password
-                        ? formError.re_password.message
-                        : ''
-                    }
-                    onBlur={(e) => handleBlur(e, 'confirm', re_password)}
-                    {...re_password.bind}
-                    InputProps={{
-                      endAdornment: (
-                        <InputAdornment position="end">
-                          <IconButton
-                            onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                            onMouseDown={(e) => e.preventDefault()}
-                          >
-                            {showConfirmPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
-                          </IconButton>
-                        </InputAdornment>
-                      ),
-                    }}
-                  />
-                </Grid>
-              </Grid>
-              <Typography
-                mt={-3}
-                className={validations.length === true
-                  ? 'registerValidText'
-                  : 'registerInvalidText'}
-              >
-                {validations.length === true ? '✓' : '✗'}
-                {' '}
-                10-alphanumeric character length
-              </Typography>
-              <Typography className={validations.upperCase === true && validations.lowerCase === true
-                ? 'registerValidText'
-                : 'registerInvalidText'}
-              >
-                {validations.upperCase === true && validations.lowerCase === true ? '✓' : '✗'}
-                {' '}
-                Uppercase and lowercase letters
-              </Typography>
-              <Typography className={validations.digit === true
-                ? 'registerValidText'
-                : 'registerInvalidText'}
-              >
-                {validations.digit === true ? '✓' : '✗'}
-                {' '}
-                At least 1 digit number
-              </Typography>
-              <Typography
-                mb={0.75}
-                className={validations.special === true
-                  ? 'registerValidText'
-                  : 'registerInvalidText'}
-              >
-                {validations.special === true ? '✓' : '✗'}
-                {' '}
-                At least 1 special character (!@#$%^&*, etc.)
-              </Typography>
-              <Button
-                type="submit"
-                fullWidth
-                variant="contained"
-                color="primary"
-                className="registerSubmit"
-                disabled={isLoadingInviteTokenCheck || isRegister || submitDisabled()}
-              >
+          )}
+        <CssBaseline />
+        <Card variant="outlined">
+          <CardContent>
+            <div className="registerPaper">
+              <img
+                src={logo}
+                className="registerLogo"
+                alt="Company logo"
+              />
+              <Typography component="h1" variant="h5" className="baskervville-sc-regular">
                 Register
-              </Button>
-              <Grid container>
-                <Grid item>
-                  <Link
-                    to={routes.LOGIN}
-                    variant="body2"
-                    className="Registerlink"
-                  >
-                    Already have an account? Sign in
-                  </Link>
+              </Typography>
+              <form
+                className="registerForm"
+                noValidate
+                onSubmit={handleSubmit}
+              >
+                <Grid container spacing={isTablet() ? 0 : 3}>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="first_name"
+                      label="First Name"
+                      name="first_name"
+                      autoComplete="first_name"
+                      error={
+                        formError.first_name
+                        && formError.first_name.error
+                      }
+                      helperText={
+                        formError.first_name
+                          ? formError.first_name.message
+                          : ''
+                      }
+                      className="registerTextField"
+                      onBlur={(e) => handleBlur(e, 'required', first_name)}
+                      {...first_name.bind}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      fullWidth
+                      id="last_name"
+                      label="Last Name"
+                      name="last_name"
+                      autoComplete="last_name"
+                      error={
+                        formError.last_name
+                        && formError.last_name.error
+                      }
+                      helperText={
+                        formError.last_name
+                          ? formError.last_name.message
+                          : ''
+                      }
+                      className="registerTextField"
+                      onBlur={(e) => handleBlur(e)}
+                      {...last_name.bind}
+                    />
+                  </Grid>
                 </Grid>
-              </Grid>
-            </form>
-          </div>
-        </CardContent>
-      </Card>
-      <Copyright />
+                <Grid container spacing={isTablet() ? 0 : 3}>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      fullWidth
+                      label="Username"
+                      type="text"
+                      className="registerTextField"
+                      {...username.bind}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      fullWidth
+                      label="Email"
+                      type="email"
+                      className="registerTextField"
+                      disabled={!!inviteToken}
+                      {...email.bind}
+                    />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={isTablet() ? 0 : 3}>
+                  <Grid item xs={12}>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      fullWidth
+                      label="Organization Name"
+                      className="registerTextField"
+                      disabled={!!inviteToken}
+                      {...organization_name.bind}
+                    />
+                  </Grid>
+                </Grid>
+                <Grid container spacing={isTablet() ? 0 : 3}>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      name="password"
+                      label="Password"
+                      type={showPassword ? 'text' : 'password'}
+                      id="password"
+                      autoComplete="current-password"
+                      className="registerTextField"
+                      value={password.value}
+                      onChange={(e) => {
+                        password.setValue(e.target.value);
+                        validatePassword(e.target.value);
+                      }}
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                              onClick={() => setShowPassword(!showPassword)}
+                              onMouseDown={(e) => e.preventDefault()}
+                            >
+                              {showPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                  <Grid item xs={12} md={6}>
+                    <TextField
+                      variant="outlined"
+                      margin="normal"
+                      required
+                      fullWidth
+                      id="re_password"
+                      label="Confirm Password"
+                      name="re_password"
+                      type={showConfirmPassword ? 'text' : 'password'}
+                      autoComplete="re_password"
+                      className="registerTextField"
+                      error={
+                        formError.re_password
+                        && formError.re_password.error
+                      }
+                      helperText={
+                        formError.re_password
+                          ? formError.re_password.message
+                          : ''
+                      }
+                      onBlur={(e) => handleBlur(e, 'confirm', re_password)}
+                      {...re_password.bind}
+                      InputProps={{
+                        endAdornment: (
+                          <InputAdornment position="end">
+                            <IconButton
+                              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                              onMouseDown={(e) => e.preventDefault()}
+                            >
+                              {showConfirmPassword ? <VisibilityOffIcon /> : <VisibilityIcon />}
+                            </IconButton>
+                          </InputAdornment>
+                        ),
+                      }}
+                    />
+                  </Grid>
+                </Grid>
+                <Typography
+                  mt={-3}
+                  className={validations.length === true
+                    ? 'registerValidText'
+                    : 'registerInvalidText'}
+                >
+                  {validations.length === true ? '✓' : '✗'}
+                  {' '}
+                  10-alphanumeric character length
+                </Typography>
+                <Typography className={validations.upperCase === true && validations.lowerCase === true
+                  ? 'registerValidText'
+                  : 'registerInvalidText'}
+                >
+                  {validations.upperCase === true && validations.lowerCase === true ? '✓' : '✗'}
+                  {' '}
+                  Uppercase and lowercase letters
+                </Typography>
+                <Typography className={validations.digit === true
+                  ? 'registerValidText'
+                  : 'registerInvalidText'}
+                >
+                  {validations.digit === true ? '✓' : '✗'}
+                  {' '}
+                  At least 1 digit number
+                </Typography>
+                <Typography
+                  mb={0.75}
+                  className={validations.special === true
+                    ? 'registerValidText'
+                    : 'registerInvalidText'}
+                >
+                  {validations.special === true ? '✓' : '✗'}
+                  {' '}
+                  At least 1 special character (!@#$%^&*, etc.)
+                </Typography>
+                <Button
+                  type="submit"
+                  fullWidth
+                  variant="contained"
+                  color="tertiary"
+                  className="registerSubmit"
+                  style={{ color: 'white' }}
+                  disabled={isLoadingInviteTokenCheck || isRegister || submitDisabled()}
+                >
+                  Register
+                </Button>
+                <Grid container>
+                  <Grid item>
+                    <Link
+                      to={routes.LOGIN}
+                      variant="body2"
+                      className="Registerlink"
+                    >
+                      Already have an account? Sign in
+                    </Link>
+                  </Grid>
+                </Grid>
+              </form>
+            </div>
+          </CardContent>
+        </Card>
+        <Copyright />
+      </Container>
     </Container>
   );
 };

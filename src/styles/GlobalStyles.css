@@ -5,4 +5,15 @@
 
 .yellow-background{
     background-color: var(--color-palette-background-secondary);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+html, body, #root, .app{
+    min-height: 100%;
+    height: 100%;
+    padding: 0;
+    margin: 0;
 }

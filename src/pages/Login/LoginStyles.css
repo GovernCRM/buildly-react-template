@@ -26,11 +26,6 @@
   margin: 8px 0px;
 }
 
-.loginTextField input:-webkit-autofill {
-  background-color: var(--color-palette-background-secondary) !important;
-  transition: background-color 5000s ease-in-out 0s !important; /* Prevent flashing */
-}
-
 .loginErrorText {
   text-align: center;
   color: var(--color-palette-error-main);

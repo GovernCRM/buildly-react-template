@@ -115,7 +115,7 @@ const NewPassword = ({ history, location }) => {
   };
 
   return (
-    <Container className="yellow-background" maxWidth="xl">
+    <Container className="blue-background" maxWidth="xl">
       <Container
         component="main"
         maxWidth="xs"
@@ -123,7 +123,7 @@ const NewPassword = ({ history, location }) => {
       >
         {isResetPasswordConfirm && <Loader open={isResetPasswordConfirm} />}
         <CssBaseline />
-        <Card variant="outlined">
+        <Card variant="outlined" className="beigecardbackground">
           <CardContent>
             <div className="resetPasswordPaper">
               <img
@@ -149,7 +149,7 @@ const NewPassword = ({ history, location }) => {
                   type={showPassword ? 'text' : 'password'}
                   id="password"
                   autoComplete="current-password"
-                  className="resetPasswordTextField"
+                  className="TextFieldBackgroundColor"
                   value={password}
                   onChange={(e) => {
                     setPassword(e.target.value);
@@ -212,7 +212,7 @@ const NewPassword = ({ history, location }) => {
                   name="re_password"
                   type={showConfirmPassword ? 'text' : 'password'}
                   autoComplete="re_password"
-                  className="resetPasswordTextField"
+                  className="TextFieldBackgroundColor"
                   error={
                     formError.re_password
                     && formError.re_password.error
@@ -241,7 +241,7 @@ const NewPassword = ({ history, location }) => {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  color="tertiary"
+                  color="primary"
                   style={{ marginTop: 8, marginBottom: 16, color: 'white' }}
                   disabled={isResetPasswordConfirm || submitDisabled()}
                 >

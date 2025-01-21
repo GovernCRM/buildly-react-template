@@ -3,8 +3,8 @@
     font-style: normal;
 }
 
-.yellow-background{
-    background-color: var(--color-palette-background-secondary);
+.blue-background{
+    background-color: var(--color-palette-background-tertiary);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -16,4 +16,17 @@ html, body, #root, .app{
     height: 100%;
     padding: 0;
     margin: 0;
+}
+
+.beigecardbackground{
+    background-color: var(--color-palette-background-light3);
+}
+
+.TextFieldBackgroundColor{
+    background-color: white !important;
+}
+
+.TextFieldBackgroundColor input:-webkit-autofill {
+    background-color: white !important;
+    transition: background-color 5000s ease-in-out 0s !important; /* Prevent flashing */
 }

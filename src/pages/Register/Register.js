@@ -155,7 +155,7 @@ const Register = ({ history }) => {
   };
 
   return (
-    <Container className="yellow-background" maxWidth="xl">
+    <Container className="blue-background" maxWidth="xl">
       <Container
         component="main"
         maxWidth="sm"
@@ -169,7 +169,7 @@ const Register = ({ history }) => {
             />
           )}
         <CssBaseline />
-        <Card variant="outlined">
+        <Card variant="outlined" className="beigecardbackground">
           <CardContent>
             <div className="registerPaper">
               <img
@@ -178,7 +178,7 @@ const Register = ({ history }) => {
                 alt="Company logo"
               />
               <Typography component="h1" variant="h5" className="baskervville-sc-regular">
-                Register
+                Create New Account
               </Typography>
               <form
                 className="registerForm"
@@ -205,7 +205,7 @@ const Register = ({ history }) => {
                           ? formError.first_name.message
                           : ''
                       }
-                      className="registerTextField"
+                      className="TextFieldBackgroundColor"
                       onBlur={(e) => handleBlur(e, 'required', first_name)}
                       {...first_name.bind}
                     />
@@ -228,7 +228,7 @@ const Register = ({ history }) => {
                           ? formError.last_name.message
                           : ''
                       }
-                      className="registerTextField"
+                      className="TextFieldBackgroundColor"
                       onBlur={(e) => handleBlur(e)}
                       {...last_name.bind}
                     />
@@ -242,7 +242,7 @@ const Register = ({ history }) => {
                       fullWidth
                       label="Username"
                       type="text"
-                      className="registerTextField"
+                      className="TextFieldBackgroundColor"
                       {...username.bind}
                     />
                   </Grid>
@@ -253,7 +253,7 @@ const Register = ({ history }) => {
                       fullWidth
                       label="Email"
                       type="email"
-                      className="registerTextField"
+                      className="TextFieldBackgroundColor"
                       disabled={!!inviteToken}
                       {...email.bind}
                     />
@@ -266,7 +266,7 @@ const Register = ({ history }) => {
                       margin="normal"
                       fullWidth
                       label="Organization Name"
-                      className="registerTextField"
+                      className="TextFieldBackgroundColor"
                       disabled={!!inviteToken}
                       {...organization_name.bind}
                     />
@@ -284,7 +284,7 @@ const Register = ({ history }) => {
                       type={showPassword ? 'text' : 'password'}
                       id="password"
                       autoComplete="current-password"
-                      className="registerTextField"
+                      className="TextFieldBackgroundColor"
                       value={password.value}
                       onChange={(e) => {
                         password.setValue(e.target.value);
@@ -315,7 +315,7 @@ const Register = ({ history }) => {
                       name="re_password"
                       type={showConfirmPassword ? 'text' : 'password'}
                       autoComplete="re_password"
-                      className="registerTextField"
+                      className="TextFieldBackgroundColor"
                       error={
                         formError.re_password
                         && formError.re_password.error
@@ -382,7 +382,7 @@ const Register = ({ history }) => {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  color="tertiary"
+                  color="primary"
                   className="registerSubmit"
                   style={{ color: 'white' }}
                   disabled={isLoadingInviteTokenCheck || isRegister || submitDisabled()}

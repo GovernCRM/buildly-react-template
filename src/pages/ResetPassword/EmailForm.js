@@ -70,7 +70,7 @@ const EmailForm = ({ history }) => {
   };
 
   return (
-    <Container className="yellow-background" maxWidth="xl">
+    <Container className="blue-background" maxWidth="xl">
       <Container
         component="main"
         maxWidth="xs"
@@ -78,7 +78,7 @@ const EmailForm = ({ history }) => {
       >
         {isResetPassword && <Loader open={isResetPassword} />}
         <CssBaseline />
-        <Card variant="outlined">
+        <Card variant="outlined" className="beigecardbackground">
           <CardContent>
             <div className="resetPasswordPaper">
               <img
@@ -103,7 +103,7 @@ const EmailForm = ({ history }) => {
                   label="Registered email"
                   name="email"
                   autoComplete="email"
-                  className="resetPasswordTextField"
+                  className="TextFieldBackgroundColor"
                   error={error.email && error.email.error}
                   helperText={
                     error && error.email
@@ -117,7 +117,7 @@ const EmailForm = ({ history }) => {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  color="tertiary"
+                  color="primary"
                   style={{ marginTop: 8, marginBottom: 16, color: 'white' }}
                   disabled={isResetPassword || submitDisabled()}
                 >

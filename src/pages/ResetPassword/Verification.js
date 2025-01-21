@@ -65,7 +65,7 @@ const Verification = ({ location }) => {
   };
 
   return (
-    <Container className="yellow-background" maxWidth="xl">
+    <Container className="blue-background" maxWidth="xl">
       <Container
         component="main"
         maxWidth="xs"
@@ -73,7 +73,7 @@ const Verification = ({ location }) => {
       >
         {isResetPassword && <Loader open={isResetPassword} />}
         <CssBaseline />
-        <Card variant="outlined">
+        <Card variant="outlined" className="beigecardbackground">
           <CardContent>
             <div className="verificationPaper">
               <img
@@ -92,7 +92,7 @@ const Verification = ({ location }) => {
                 type="submit"
                 fullWidth
                 variant="contained"
-                color="tertiary"
+                color="primary"
                 className="verificationButton"
                 onClick={handleResendVerification}
                 disabled={isDisabled || attempts <= 0}

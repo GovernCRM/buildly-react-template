@@ -97,7 +97,7 @@ const Login = ({ history }) => {
   };
 
   return (
-    <Container className="yellow-background" maxWidth="xl">
+    <Container className="blue-background" maxWidth="xl">
       <Container
         component="main"
         maxWidth="xs"
@@ -105,7 +105,7 @@ const Login = ({ history }) => {
       >
         {(isPasswordCheck || islogin) && <Loader open={isPasswordCheck || islogin} />}
         <CssBaseline />
-        <Card variant="outlined">
+        <Card variant="outlined" className="beigecardbackground">
           <CardContent>
             <div className="loginPaper">
               <img
@@ -132,7 +132,7 @@ const Login = ({ history }) => {
                   autoComplete="username"
                   error={isLoginError || (error.username && error.username.error)}
                   helperText={error && error.username ? error.username.message : ''}
-                  className="loginTextField"
+                  className="TextFieldBackgroundColor"
                   onBlur={(e) => handleBlur(e, 'required', username)}
                   {...username.bind}
                 />
@@ -152,7 +152,7 @@ const Login = ({ history }) => {
                       ? error.password.message
                       : ''
                   }
-                  className="loginTextField"
+                  className="TextFieldBackgroundColor"
                   onBlur={(e) => handleBlur(e, 'required', password)}
                   {...password.bind}
                   InputProps={{
@@ -177,7 +177,7 @@ const Login = ({ history }) => {
                   type="submit"
                   fullWidth
                   variant="contained"
-                  color="tertiary"
+                  color="primary"
                   style={{ marginTop: 8, marginBottom: 16, color: 'white' }}
                   disabled={isPasswordCheck || islogin || submitDisabled()}
                 >

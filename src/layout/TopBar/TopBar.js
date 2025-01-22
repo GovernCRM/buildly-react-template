@@ -100,7 +100,7 @@ const TopBar = ({
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={settingMenu}
-              color="primary"
+              color="secondary"
             >
               <SettingsIcon fontSize="large" />
             </IconButton>

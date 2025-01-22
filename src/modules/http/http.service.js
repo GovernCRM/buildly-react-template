@@ -11,20 +11,24 @@ import { oauthService } from '@modules/oauth/oauth.service';
  * @param {string=} responseType - the expected response type from the server
  * @returns response of the request or error
  */
-function makeRequest(method, url, body, useJwt, contentType, responseType) {
+function makeRequest(method, url, body, useJwt, contentType, responseType, skipAuth = false) {
   let token;
   let tokenType;
-  if (useJwt) {
-    tokenType = 'JWT';
-    token = oauthService.getJwtToken();
-  } else {
-    tokenType = 'Bearer';
-    token = oauthService.getAccessToken();
+  let headers;
+  if (!skipAuth) {
+    if (useJwt) {
+      tokenType = 'JWT';
+      token = oauthService.getJwtToken();
+    } else {
+      tokenType = 'Bearer';
+      token = oauthService.getAccessToken();
+    }
+    headers = {
+      Authorization: `${tokenType} ${token}`,
+      'Content-Type': contentType || 'application/json',
+    };
   }
-  const headers = {
-    Authorization: `${tokenType} ${token}`,
-    'Content-Type': contentType || 'application/json',
-  };
+
   const options = {
     method,
     data: body,

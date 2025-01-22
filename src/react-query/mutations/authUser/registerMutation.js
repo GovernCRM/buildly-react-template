@@ -8,9 +8,13 @@ export const useRegisterMutation = (
 ) => useMutation(
   async (registerData) => {
     const response = await httpService.makeRequest(
-      'post',
-      `${window.env.API_URL}coreuser/`,
-      registerData,
+      'post', // method
+      `${window.env.API_URL}coreuser/`, // url
+      registerData, // body
+      false, // useJwt
+      null, // contentType
+      null, // responseType
+      true, // skipAuth
     );
     return response;
   },

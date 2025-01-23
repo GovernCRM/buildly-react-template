@@ -20,6 +20,8 @@ const theme = extendTheme({
           primary: '#780000',
           secondary: '#F9D658',
           tertiary: '#003049',
+          black: '#000',
+          border: '#ddd',
         },
         primary: {
           main: '#780000',
@@ -29,6 +31,9 @@ const theme = extendTheme({
         },
         tertiary: {
           main: '#003049',
+        },
+        lightbeige: {
+          main: '#FDF0D5',
         },
         success: {
           main: '#009900',

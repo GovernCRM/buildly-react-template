@@ -36,7 +36,16 @@ function makeRequest(method, url, body, useJwt, contentType, responseType, skipA
     returnPromise: true,
     responseType: responseType || null,
   };
-  return http.request(url, options);
+
+  return http
+    .request(url, options)
+    .then((response) => response)
+    .catch((error) => {
+      if (error.response) {
+        throw error.response.data;
+      }
+      throw error;
+    });
 }
 
 export const httpService = {

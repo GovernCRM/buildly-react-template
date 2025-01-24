@@ -32,7 +32,7 @@ const Register = ({ history }) => {
   const [inviteToken, setInviteToken] = useState('');
 
   const first_name = useInput('', { required: true });
-  const last_name = useInput('');
+  const last_name = useInput('', { required: true });
   const username = useInput('', { required: true });
   const email = useInput('', { required: true });
   const password = useInput('', { required: true });
@@ -214,6 +214,7 @@ const Register = ({ history }) => {
                     <TextField
                       variant="outlined"
                       margin="normal"
+                      required
                       fullWidth
                       id="last_name"
                       label="Last Name"
@@ -229,7 +230,7 @@ const Register = ({ history }) => {
                           : ''
                       }
                       className="TextFieldBackgroundColor"
-                      onBlur={(e) => handleBlur(e)}
+                      onBlur={(e) => handleBlur(e, 'required', last_name)}
                       {...last_name.bind}
                     />
                   </Grid>
@@ -239,10 +240,16 @@ const Register = ({ history }) => {
                     <TextField
                       variant="outlined"
                       margin="normal"
+                      required
                       fullWidth
+                      id="username"
                       label="Username"
-                      type="text"
+                      name="username"
+                      autoComplete="username"
+                      error={formError || (formError.username && formError.username.error)}
+                      helperText={formError && formError.username ? formError.username.message : ''}
                       className="TextFieldBackgroundColor"
+                      onBlur={(e) => handleBlur(e, 'required', username)}
                       {...username.bind}
                     />
                   </Grid>
@@ -250,10 +257,17 @@ const Register = ({ history }) => {
                     <TextField
                       variant="outlined"
                       margin="normal"
+                      required
                       fullWidth
+                      id="email"
                       label="Email"
                       type="email"
+                      name="email"
+                      autoComplete="email"
+                      error={formError || (formError.email && formError.email.error)}
+                      helperText={formError && formError.email ? formError.email.message : ''}
                       className="TextFieldBackgroundColor"
+                      onBlur={(e) => handleBlur(e, 'required', email)}
                       disabled={!!inviteToken}
                       {...email.bind}
                     />
@@ -264,9 +278,16 @@ const Register = ({ history }) => {
                     <TextField
                       variant="outlined"
                       margin="normal"
+                      required
                       fullWidth
+                      id="organization_name"
                       label="Organization Name"
+                      name="organization_name"
+                      autoComplete="organization_name"
+                      error={formError || (formError.username && formError.username.error)}
+                      helperText={formError && formError.username ? formError.username.message : ''}
                       className="TextFieldBackgroundColor"
+                      onBlur={(e) => handleBlur(e, 'required', organization_name)}
                       disabled={!!inviteToken}
                       {...organization_name.bind}
                     />

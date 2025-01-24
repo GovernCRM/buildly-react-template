@@ -126,7 +126,7 @@ const Login = ({ history }) => {
                   margin="normal"
                   required
                   fullWidth
-                  id="usrename"
+                  id="username"
                   label="Username"
                   name="username"
                   autoComplete="username"

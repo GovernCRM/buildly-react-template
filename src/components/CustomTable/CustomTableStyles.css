@@ -32,14 +32,34 @@
     border-top: 1px solid var(--color-palette-background-border);
 }
 
-.pagination-box {
-    display: flex;
+.MuiDataGrid-footerContainer{
     justify-content: center;
-    align-items: center;
-    padding: 16px;
-    background-color: var(--color-palette-background-tertiary);
-    width: 100%;
-    position: absolute;
+    position: fixed;
     bottom: 0;
-    color: var(--color-palette-background-default);
+    width: 100%;
+    background-color: var(--color-palette-background-tertiary);
+}
+
+.MuiDataGrid-selectedRowCount, .MuiTablePagination-root, .MuiTablePagination-root .MuiSvgIcon-root{
+    color: white;
+}
+
+.MuiContainer-root {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.MuiDataGrid-footerContainer{
+    margin: -1px;
+}
+
+.MuiDataGrid-main{
+    max-width: 1920px;
+    padding: 0px 40px;
+}
+
+.DashboardMainContainer {
+    max-width: 3000px;
+    width: 100%;
+    margin: auto;
 }

@@ -117,9 +117,6 @@ const CustomTable = () => (
         className="custom-data-grid"
       />
     </Box>
-    {/* <Box className="pagination-box">
-      <Pagination count={1} variant="outlined" shape="rounded" />
-    </Box> */}
   </>
 );
 

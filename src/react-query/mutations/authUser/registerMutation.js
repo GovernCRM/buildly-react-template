@@ -20,11 +20,15 @@ export const useRegisterMutation = (
   },
   {
     onSuccess: async () => {
-      displayAlert('success', 'Registration was successful');
+      displayAlert('success', 'Registration successful');
       history.push(redirectTo);
     },
-    onError: () => {
-      displayAlert('error', 'Registration failed');
+    onError: (error) => {
+      if (error && error.username) {
+        displayAlert('error', `Registration failed: ${error.username[0]}`);
+      } else {
+        displayAlert('error', 'An unexpected error occurred.');
+      }
     },
   },
 );

@@ -100,7 +100,7 @@ const TopBar = ({
               aria-controls="menu-appbar"
               aria-haspopup="true"
               onClick={settingMenu}
-              color="primary"
+              color="secondary"
             >
               <SettingsIcon fontSize="large" />
             </IconButton>
@@ -115,7 +115,7 @@ const TopBar = ({
             aria-controls="menu-appbar"
             aria-haspopup="true"
             onClick={handleMenu}
-            color="primary"
+            color="secondary"
           >
             <AccountCircle fontSize="large" />
           </IconButton>

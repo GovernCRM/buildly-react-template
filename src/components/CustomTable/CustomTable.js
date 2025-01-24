@@ -1,6 +1,7 @@
 import React from 'react';
 import { DataGrid } from '@mui/x-data-grid';
 import { Checkbox, Box, Pagination } from '@mui/material';
+import './CustomTableStyles.css';
 
 const columns = [
   { field: 'name', headerName: 'NAME', width: 200 },
@@ -24,70 +25,102 @@ const rows = [
     id: 4, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
   },
   {
-    id: 5, name: '', email: '', engagementStatus: '', lastAttemptedDate: '', lastResponseDate: '',
+    id: 5, name: 'Full Name', email: 'name@com', engagementStatus: 'Pending',
   },
   {
-    id: 6, name: '', email: '', engagementStatus: '', lastAttemptedDate: '', lastResponseDate: '',
+    id: 6, name: 'Full Name', email: 'name@com', engagementStatus: 'A 11/05/24', lastAttemptedDate: '11/20/24',
   },
   {
-    id: 7, name: '', email: '', engagementStatus: '', lastAttemptedDate: '', lastResponseDate: '',
+    id: 7, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
   },
   {
-    id: 8, name: '', email: '', engagementStatus: '', lastAttemptedDate: '', lastResponseDate: '',
+    id: 8, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
   },
   {
-    id: 9, name: '', email: '', engagementStatus: '', lastAttemptedDate: '', lastResponseDate: '',
+    id: 9, name: 'Full Name', email: 'name@com', engagementStatus: 'Pending',
   },
   {
-    id: 10, name: '', email: '', engagementStatus: '', lastAttemptedDate: '', lastResponseDate: '',
+    id: 10, name: 'Full Name', email: 'name@com', engagementStatus: 'A 11/05/24', lastAttemptedDate: '11/20/24',
+  },
+  {
+    id: 11, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 12, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 13, name: 'Full Name', email: 'name@com', engagementStatus: 'Pending',
+  },
+  {
+    id: 14, name: 'Full Name', email: 'name@com', engagementStatus: 'A 11/05/24', lastAttemptedDate: '11/20/24',
+  },
+  {
+    id: 15, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 16, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 17, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 18, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 19, name: 'Full Name', email: 'name@com', engagementStatus: 'Pending',
+  },
+  {
+    id: 20, name: 'Full Name', email: 'name@com', engagementStatus: 'A 11/05/24', lastAttemptedDate: '11/20/24',
+  },
+  {
+    id: 21, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 22, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 23, name: 'Full Name', email: 'name@com', engagementStatus: 'Pending',
+  },
+  {
+    id: 24, name: 'Full Name', email: 'name@com', engagementStatus: 'A 11/05/24', lastAttemptedDate: '11/20/24',
+  },
+  {
+    id: 25, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 26, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 27, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 28, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+  },
+  {
+    id: 29, name: 'Full Name', email: 'name@com', engagementStatus: 'Pending',
+  },
+  {
+    id: 30, name: 'Full Name', email: 'name@com', engagementStatus: 'A 11/05/24', lastAttemptedDate: '11/20/24',
   },
 ];
 
 const CustomTable = () => (
-  <Box sx={{ height: 400, width: '100%' }}>
-    <DataGrid
-      rows={rows}
-      columns={columns}
-      pageSize={10}
-      rowsPerPageOptions={[10]}
-      disableSelectionOnClick
-      checkboxSelection
-      components={{
-        Pagination: () => (
-          <Box
-            sx={{
-              display: 'flex',
-              justifyContent: 'center',
-              alignItems: 'center',
-              padding: '16px',
-              backgroundColor: '#F9D658',
-              width: '100%',
-            }}
-          >
-            <Pagination count={1} variant="outlined" shape="rounded" />
-          </Box>
-        ),
-      }}
-      sx={{
-        '& .MuiDataGrid-columnHeaders': {
-          backgroundColor: '#780000 ',
-          color: '#fff',
-          fontWeight: 'bold',
-          border: '1px solid #000',
-        },
-        '& .MuiDataGrid-cell': {
-          backgroundColor: '#fff',
-          border: '1px solid #ddd',
-        },
-        '& .MuiDataGrid-row': {
-          borderBottom: '1px solid #ddd',
-        },
-        '& .MuiDataGrid-footerContainer': {
-          borderTop: '1px solid #ddd',
-        },
-      }}
-    />
-  </Box>
+  <>
+    <Box className="custom-table-container">
+      <DataGrid
+        rows={rows}
+        columns={columns}
+        pageSize={10}
+        rowsPerPageOptions={[10]}
+        disableSelectionOnClick
+        checkboxSelection
+        className="custom-data-grid"
+      />
+    </Box>
+    {/* <Box className="pagination-box">
+      <Pagination count={1} variant="outlined" shape="rounded" />
+    </Box> */}
+  </>
 );
 
 export default CustomTable;

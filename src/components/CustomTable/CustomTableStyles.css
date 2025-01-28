@@ -1,7 +1,7 @@
 
 .custom-table-container {
     height: auto;
-    max-height: 500px;
+    max-height: 350px;
     width: 100%;
     position: relative;
     display: flex;
@@ -14,9 +14,11 @@
 
 .custom-data-grid .MuiDataGrid-columnHeaders {
     background-color: var(--color-palette-background-primary);
-    color: var(--color-palette-background-default);
+    color: var(--color-palette-secondary-main);
     font-weight: bold;
     border: 1px solid var(--color-palette-background-black);
+    min-height: 42px !important;
+    max-height: 42px !important;
 }
 
 .custom-data-grid .MuiDataGrid-cell {
@@ -41,7 +43,7 @@
 }
 
 .MuiDataGrid-selectedRowCount, .MuiTablePagination-root, .MuiTablePagination-root .MuiSvgIcon-root{
-    color: white;
+    color: var(--color-palette-secondary-main);
 }
 
 .MuiContainer-root {

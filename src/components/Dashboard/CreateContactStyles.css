@@ -1,0 +1,11 @@
+.form-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.form-container .MuiTextField-root,
+.form-container .MuiFormControl-root {
+    flex: 1;
+    min-width: 250px;
+}

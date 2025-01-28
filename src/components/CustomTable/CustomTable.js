@@ -13,13 +13,13 @@ const columns = [
 
 const rows = [
   {
-    id: 1, name: 'Full Name', email: 'name@com', engagementStatus: 'Pending',
+    id: 1, name: 'Saurabh Mohanrao Sonvane', email: 'saurabh.sonvane@ajackus.com', engagementStatus: 'Pending',
   },
   {
     id: 2, name: 'Full Name', email: 'name@com', engagementStatus: 'A 11/05/24', lastAttemptedDate: '11/20/24',
   },
   {
-    id: 3, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
+    id: 3, name: 'Saurabh Mohanrao Sonvane', email: 'saurabh.sonvane@ajackus.com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
   },
   {
     id: 4, name: 'Full Name', email: 'name@com', engagementStatus: 'R 12/06/24', lastAttemptedDate: '11/20/24', lastResponseDate: '12/06/24',
@@ -114,6 +114,8 @@ const CustomTable = () => (
         rowsPerPageOptions={[10]}
         disableSelectionOnClick
         checkboxSelection
+        rowHeight={42}
+        headerHeight={42}
         className="custom-data-grid"
       />
     </Box>

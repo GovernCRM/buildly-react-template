@@ -11,13 +11,23 @@ export const useLoginMutation = (
     const token = await oauthService.authenticateWithPasswordFlow(loginData);
     oauthService.setAccessToken(token.data);
     const user = await httpService.makeRequest(
-      'get',
-      `${window.env.API_URL}coreuser/me/`,
+      'get', // method
+      `${window.env.API_URL}coreuser/me/`, // url
+      null, // body
+      true, // useJwt
+      'application/json', // contentType
+      null, // responseType
+      false, // skipAuth
     );
     oauthService.setOauthUser(user, { loginData });
     const coreuser = await httpService.makeRequest(
-      'get',
-      `${window.env.API_URL}coreuser/`,
+      'get', // method
+      `${window.env.API_URL}coreuser/`, // url
+      null, // body
+      true, // useJwt
+      'application/json', // contentType
+      null, // responseType
+      false, // skipAuth
     );
     oauthService.setCurrentCoreUser(coreuser, user);
     return user;

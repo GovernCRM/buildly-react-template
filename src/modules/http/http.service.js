@@ -17,7 +17,7 @@ function makeRequest(method, url, body, useJwt, contentType, responseType, skipA
   let headers;
   if (!skipAuth) {
     if (useJwt) {
-      tokenType = 'JWT';
+      tokenType = 'Bearer';
       token = oauthService.getJwtToken();
     } else {
       tokenType = 'Bearer';

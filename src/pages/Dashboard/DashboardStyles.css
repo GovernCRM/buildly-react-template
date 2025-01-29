@@ -4,9 +4,20 @@
   margin-top: 50px;
 }
 
-.DashboardMainContainer{
+.DashboardMainTableContainer {
   height: 100%;
   margin: auto;
+  margin-top: 20px;
 }
 
+.MainButtonContainerFirstRow{
+  display: flex;
+  padding: 0px 40px !important;
+  justify-content: flex-end;
+  width: 100%;
+  margin-top: 20px;
+}
 
+.MainButtonContainerFirstRow button{
+  color:var(--color-palette-white-main);
+}

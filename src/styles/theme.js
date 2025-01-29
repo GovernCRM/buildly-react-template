@@ -35,6 +35,9 @@ const theme = extendTheme({
         lightbeige: {
           main: '#FDF0D5',
         },
+        white: {
+          main: '#FFFFFF',
+        },
         success: {
           main: '#009900',
         },

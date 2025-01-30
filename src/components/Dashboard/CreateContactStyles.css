@@ -9,3 +9,26 @@
     flex: 1;
     min-width: 250px;
 }
+
+.DialogMainContainer{
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.DialogMainContainer .MuiPaper-root{
+    background-color: var(--color-palette-background-light3);
+} 
+
+.DialogMainContainer .MuiPaper-root h2{
+    margin: auto;
+}
+
+.CancelModalButton{
+    border-color: rgba(0, 0, 0, 0.23);
+    color: var(--color-palette-tertiary-main);
+}
+
+.CancelModalButton:hover{
+    border-color: var(--color-palette-tertiary-main);
+    background-color: rgba(0, 0, 0, 0.04);
+}

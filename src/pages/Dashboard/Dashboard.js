@@ -12,10 +12,9 @@ const Dashboard = () => {
 
   return (
     <>
-      <Container maxWidth="xl" className="MainButtonContainerFirstRow">
+      <Container maxWidth="lg">
         <Button
           variant="contained"
-          color="tertiary"
           onClick={() => setIsModalOpen(true)}
         >
           Create Contact
@@ -25,7 +24,7 @@ const Dashboard = () => {
         isOpen={isModalOpen}
         onClose={() => setIsModalOpen(false)}
       />
-      <Box className="DashboardMainTableContainer" maxWidth="xl">
+      <Box className="DashboardMainContainer" maxWidth="xl">
         <CustomTable />
       </Box>
     </>

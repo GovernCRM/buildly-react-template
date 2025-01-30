@@ -1,3 +1,4 @@
+
 .custom-table-container {
     height: auto;
     max-height: 350px;
@@ -9,11 +10,6 @@
 
 .custom-data-grid {
     flex-grow: 1;
-    display: flex;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
-    border: none;
 }
 
 .custom-data-grid .MuiDataGrid-columnHeaders {
@@ -38,7 +34,7 @@
     border-top: 1px solid var(--color-palette-background-border);
 }
 
-.MuiDataGrid-footerContainer {
+.MuiDataGrid-footerContainer{
     justify-content: center;
     position: fixed;
     bottom: 0;
@@ -46,9 +42,7 @@
     background-color: var(--color-palette-background-tertiary);
 }
 
-.MuiDataGrid-selectedRowCount,
-.MuiTablePagination-root,
-.MuiTablePagination-root .MuiSvgIcon-root {
+.MuiDataGrid-selectedRowCount, .MuiTablePagination-root, .MuiTablePagination-root .MuiSvgIcon-root{
     color: var(--color-palette-secondary-main);
 }
 
@@ -57,14 +51,13 @@
     padding-right: 0px;
 }
 
-.MuiDataGrid-footerContainer {
+.MuiDataGrid-footerContainer{
     margin: -1px;
 }
 
-.MuiDataGrid-main {
+.MuiDataGrid-main{
     max-width: 1920px;
     padding: 0px 40px;
-    width: 100%;
 }
 
 .DashboardMainContainer {

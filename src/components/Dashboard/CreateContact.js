@@ -14,6 +14,7 @@ import {
   FormHelperText,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
+import './CreateContactStyles.css';
 
 const states = [
   'Alabama', 'Alaska', 'Arizona', 'Arkansas', 'California', 'Colorado', 'Connecticut',
@@ -77,37 +78,16 @@ export function ContactModal({ isOpen, onClose }) {
       onClose={onClose}
       maxWidth="sm"
       fullWidth
-      PaperProps={{
-        sx: {
-          borderRadius: 1,
-          boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-        },
-      }}
+      className="DialogMainContainer"
     >
-      <DialogTitle
-        sx={{
-          m: 0,
-          p: 2,
-          pb: 1,
-          backgroundColor: '#fef6e6',
-          borderBottom: '1px solid rgba(0, 0, 0, 0.12)',
-        }}
-      >
-        <Typography variant="h6" component="h2">
+      <DialogTitle>
+        <Typography variant="h6" component="h2" className="baskervville-sc-regular" sx={{ margin: 'auto' }}>
           Create contact
         </Typography>
-        <IconButton onClick={onClose} sx={{ position: 'absolute', right: 8, top: 8 }}>
-          <CloseIcon />
-        </IconButton>
       </DialogTitle>
 
       <form onSubmit={handleSubmit}>
-        <DialogContent
-          sx={{
-            backgroundColor: '#fef6e6',
-            py: 3,
-          }}
-        >
+        <DialogContent>
           <Box sx={{ '& .MuiTextField-root': { mb: 1 } }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={3}>
@@ -231,6 +211,7 @@ export function ContactModal({ isOpen, onClose }) {
                   <FormHelperText error>{errors.birthDate}</FormHelperText>
                 )}
               </Grid>
+
               <Grid item xs={12} sm={6}>
                 <TextField
                   select
@@ -316,7 +297,7 @@ export function ContactModal({ isOpen, onClose }) {
               </Grid>
 
               <Grid item xs={12}>
-                <Typography variant="subtitle1" sx={{ mb: 1, fontWeight: 'medium' }}>
+                <Typography variant="subtitle1" color="primary" sx={{ mb: 1, fontWeight: 'medium' }}>
                   Primary Address
                 </Typography>
               </Grid>
@@ -457,6 +438,213 @@ export function ContactModal({ isOpen, onClose }) {
                 )}
               </Grid>
 
+              {/* ////////////////////////////////////////////////////////////////////////////////////// */}
+              <Grid item xs={12}>
+                <Typography variant="subtitle1" color="primary" sx={{ mb: 1, fontWeight: 'medium' }}>
+                  Secondary Address
+                </Typography>
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  name="secondarystreetName"
+                  label="Street Name"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.streetName}
+                />
+                {errors.streetName && (
+                  <FormHelperText error>{errors.streetName}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  name="secondarystreetNumber"
+                  label="Street Number"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.streetNumber}
+                />
+                {errors.streetNumber && (
+                  <FormHelperText error>{errors.streetNumber}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  select
+                  fullWidth
+                  name="secondaryaddressType"
+                  label="Type"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.addressType}
+                  defaultValue=""
+                >
+                  {addressTypes.map((type) => (
+                    <MenuItem key={type} value={type}>
+                      {type}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                {errors.addressType && (
+                  <FormHelperText error>{errors.addressType}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  name="secondaryunit"
+                  label="Unit"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.unit}
+                />
+                {errors.unit && (
+                  <FormHelperText error>{errors.unit}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  fullWidth
+                  name="secondarycity"
+                  label="City"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.city}
+                />
+                {errors.city && (
+                  <FormHelperText error>{errors.city}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  select
+                  fullWidth
+                  name="secondarystate"
+                  label="State"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.state}
+                  defaultValue=""
+                >
+                  {states.map((state) => (
+                    <MenuItem key={state} value={state}>
+                      {state}
+                    </MenuItem>
+                  ))}
+                </TextField>
+                {errors.state && (
+                  <FormHelperText error>{errors.state}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={4}>
+                <TextField
+                  fullWidth
+                  name="secondaryzip"
+                  label="Zip"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.zip}
+                />
+                {errors.zip && (
+                  <FormHelperText error>{errors.zip}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  name="secondarycounty"
+                  label="County"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.county}
+                />
+                {errors.county && (
+                  <FormHelperText error>{errors.county}</FormHelperText>
+                )}
+              </Grid>
+              {/* ////////////////////////////////////////////////////////////////////////////////////// */}
+              <Grid item xs={12} sx={{ mt: 4 }}>
+                <TextField
+                  fullWidth
+                  name="politicalAffiliation"
+                  label="Political Affiliation"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.professionalTitle}
+                />
+                {errors.professionalTitle && (
+                  <FormHelperText error>{errors.professionalTitle}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={6}>
+                <TextField
+                  fullWidth
+                  name="registrationDate"
+                  label="Registration Date"
+                  type="date"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.birthDate}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                />
+                {errors.birthDate && (
+                  <FormHelperText error>{errors.birthDate}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  name="voterHistory"
+                  label="Voter History"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.professionalTitle}
+                />
+                {errors.professionalTitle && (
+                  <FormHelperText error>{errors.professionalTitle}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  name="precinct"
+                  label="Precinct"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.professionalTitle}
+                />
+                {errors.professionalTitle && (
+                  <FormHelperText error>{errors.professionalTitle}</FormHelperText>
+                )}
+              </Grid>
+
               <Grid item xs={12}>
                 <TextField
                   fullWidth
@@ -474,26 +662,68 @@ export function ContactModal({ isOpen, onClose }) {
 
               <Grid item xs={12}>
                 <TextField
-                  select
                   fullWidth
-                  name="registrationState"
-                  label="Registration State"
+                  name="professionalaffiliation"
+                  label="Professional Affiliation"
                   variant="outlined"
                   size="small"
                   required
                   error={!!errors.registrationState}
-                  defaultValue=""
-                >
-                  {states.map((state) => (
-                    <MenuItem key={state} value={state}>
-                      {state}
-                    </MenuItem>
-                  ))}
-                </TextField>
+                />
                 {errors.registrationState && (
                   <FormHelperText error>{errors.registrationState}</FormHelperText>
                 )}
               </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  name="socialMedia"
+                  label="Social Media"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.registrationState}
+                />
+                {errors.registrationState && (
+                  <FormHelperText error>{errors.registrationState}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12} sm={6} sx={{ mt: 4 }}>
+                <TextField
+                  fullWidth
+                  name="dateAdded"
+                  label="Date Added"
+                  type="date"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.birthDate}
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                />
+                {errors.birthDate && (
+                  <FormHelperText error>{errors.birthDate}</FormHelperText>
+                )}
+              </Grid>
+
+              <Grid item xs={12}>
+                <TextField
+                  fullWidth
+                  name="addedBy"
+                  label="Added by (User Name or ID)"
+                  variant="outlined"
+                  size="small"
+                  required
+                  error={!!errors.registrationState}
+                />
+                {errors.registrationState && (
+                  <FormHelperText error>{errors.registrationState}</FormHelperText>
+                )}
+              </Grid>
+
             </Grid>
           </Box>
         </DialogContent>
@@ -501,28 +731,20 @@ export function ContactModal({ isOpen, onClose }) {
         <DialogActions
           sx={{
             p: 2,
-            backgroundColor: '#fef6e6',
-            borderTop: '1px solid rgba(0, 0, 0, 0.12)',
           }}
         >
           <Button
             onClick={onClose}
             variant="outlined"
-            sx={{
-              color: 'text.primary',
-              borderColor: 'rgba(0, 0, 0, 0.23)',
-              '&:hover': {
-                borderColor: 'rgba(0, 0, 0, 0.5)',
-                backgroundColor: 'rgba(0, 0, 0, 0.04)',
-              },
-            }}
+            className="CancelModalButton"
           >
             Cancel
           </Button>
           <Button
             type="submit"
             variant="contained"
-            color="primary"
+            color="tertiary"
+            style={{ color: 'white' }}
           >
             Save Contact
           </Button>

@@ -39,16 +39,16 @@ const theme = extendTheme({
           main: '#FFFFFF',
         },
         success: {
-          main: '#009900',
+          main: '#003049',
         },
         info: {
           main: '#0099CC',
         },
         warning: {
-          main: '#FFCC33',
+          main: '#F9D658',
         },
         error: {
-          main: '#FF0033',
+          main: '#780000',
         },
       },
     },

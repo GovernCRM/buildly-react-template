@@ -32,3 +32,14 @@
     border-color: var(--color-palette-tertiary-main);
     background-color: rgba(0, 0, 0, 0.04);
 }
+
+.DialogTitleContainer{
+    display: flex;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+    align-items: center;
+}    
+
+.createContactBox input, .createContactBox .MuiSelect-select{
+    background-color:white;
+}

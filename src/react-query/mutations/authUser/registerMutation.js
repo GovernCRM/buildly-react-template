@@ -20,7 +20,7 @@ export const useRegisterMutation = (
   },
   {
     onSuccess: async () => {
-      displayAlert('success', 'Registration successful');
+      displayAlert('success', 'Registration successful! Please check your email to verify your account. If you don’t see the email, check your spam folder.');
       history.push(redirectTo);
     },
     onError: (error) => {

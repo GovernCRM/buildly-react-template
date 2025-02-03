@@ -12,6 +12,9 @@ import {
   Box,
   Typography,
   FormHelperText,
+  Checkbox,
+  FormControlLabel,
+  FormGroup,
 } from '@mui/material';
 import CloseIcon from '@mui/icons-material/Close';
 import './CreateContactStyles.css';
@@ -26,13 +29,29 @@ const states = [
   'Texas', 'Utah', 'Vermont', 'Virginia', 'Washington', 'West Virginia', 'Wisconsin', 'Wyoming',
 ];
 
-const prefixes = ['Mr.', 'Mrs.', 'Ms.', 'Dr.', 'Prof.'];
-const suffixes = ['Jr.', 'Sr.', 'II', 'III', 'IV', 'V'];
+const prefixes = ['Mr.', 'Mrs.', 'Ms.'];
+const suffixes = ['Jr.', 'Sr.'];
 const genders = ['Male', 'Female', 'Other', 'Prefer not to say'];
 const addressTypes = ['Home', 'Work', 'Other'];
 
 export function ContactModal({ isOpen, onClose }) {
   const [errors, setErrors] = useState({});
+  const [contactPreferences, setContactPreferences] = useState({
+    email: true,
+    calls: true,
+    textMessages: true,
+    mailingAddress: true,
+  });
+
+  const handleContactPrefChange = (event) => {
+    const { name, checked } = event.target;
+    setContactPreferences((prev) => ({
+      ...prev,
+      [name]: checked,
+    }));
+  };
+
+  // console.log(contactPreferences);
 
   const validateField = (name, value) => {
     if (!value) {
@@ -80,15 +99,18 @@ export function ContactModal({ isOpen, onClose }) {
       fullWidth
       className="DialogMainContainer"
     >
-      <DialogTitle>
+      <DialogTitle className="DialogTitleContainer">
         <Typography variant="h6" component="h2" className="baskervville-sc-regular" sx={{ margin: 'auto' }}>
           Create contact
         </Typography>
+        <IconButton onClick={onClose}>
+          <CloseIcon />
+        </IconButton>
       </DialogTitle>
 
       <form onSubmit={handleSubmit}>
         <DialogContent>
-          <Box sx={{ '& .MuiTextField-root': { mb: 1 } }}>
+          <Box className="createContactBox" sx={{ '& .MuiTextField-root': { mb: 1 } }}>
             <Grid container spacing={2}>
               <Grid item xs={12} sm={3}>
                 <TextField
@@ -297,7 +319,7 @@ export function ContactModal({ isOpen, onClose }) {
               </Grid>
 
               <Grid item xs={12}>
-                <Typography variant="subtitle1" color="primary" sx={{ mb: 1, fontWeight: 'medium' }}>
+                <Typography variant="subtitle1" color="primary" sx={{ mb: 1, fontWeight: 'small' }}>
                   Primary Address
                 </Typography>
               </Grid>
@@ -440,7 +462,7 @@ export function ContactModal({ isOpen, onClose }) {
 
               {/* ////////////////////////////////////////////////////////////////////////////////////// */}
               <Grid item xs={12}>
-                <Typography variant="subtitle1" color="primary" sx={{ mb: 1, fontWeight: 'medium' }}>
+                <Typography variant="subtitle1" color="primary" sx={{ mb: 1, fontWeight: 'small' }}>
                   Secondary Address
                 </Typography>
               </Grid>
@@ -722,6 +744,58 @@ export function ContactModal({ isOpen, onClose }) {
                 {errors.registrationState && (
                   <FormHelperText error>{errors.registrationState}</FormHelperText>
                 )}
+              </Grid>
+
+              <Grid item xs={12}>
+                <Typography variant="subtitle1" color="primary" sx={{ fontWeight: 'small' }}>
+                  How you’d like to be contacted?
+                </Typography>
+              </Grid>
+
+              {/* Checkbox fields */}
+              <Grid item xs={12}>
+                <FormGroup>
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name="email"
+                        checked={contactPreferences.email}
+                        onChange={handleContactPrefChange}
+                      />
+                    )}
+                    label="Email"
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name="calls"
+                        checked={contactPreferences.calls}
+                        onChange={handleContactPrefChange}
+                      />
+                    )}
+                    label="Calls"
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name="textMessages"
+                        checked={contactPreferences.textMessages}
+                        onChange={handleContactPrefChange}
+                      />
+                    )}
+                    label="Text Messages"
+                  />
+                  <FormControlLabel
+                    control={(
+                      <Checkbox
+                        name="mailingAddress"
+                        checked={contactPreferences.mailingAddress}
+                        onChange={handleContactPrefChange}
+                      />
+                    )}
+                    label="Mailing Address"
+                  />
+                </FormGroup>
               </Grid>
 
             </Grid>

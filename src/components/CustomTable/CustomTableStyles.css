@@ -72,3 +72,11 @@
     width: 100%;
     margin: auto;
 }
+
+.custom-data-grid .MuiDataGrid-iconButtonContainer .MuiIconButton-root, .custom-data-grid .MuiDataGrid-menuIcon .MuiDataGrid-menuIconButton{
+    color: var(--color-palette-secondary-main);
+}
+
+.MuiDataGrid-columnHeaderTitleContainerContent .MuiButtonBase-root .MuiSvgIcon-root{
+    fill: var(--color-palette-secondary-main);
+}

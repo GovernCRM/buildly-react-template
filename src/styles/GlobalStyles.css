@@ -46,6 +46,6 @@ body{
     color:var(--color-palette-lightbeige-main);
 }
 
-.Mui-disabled{
+.loginForm .Mui-disabled, .registerForm .Mui-disabled, .resetPasswordForm .Mui-disabled, .verificationPaper .Mui-disabled{
     background-color:var(--color-palette-disabled-main) !important;
 }

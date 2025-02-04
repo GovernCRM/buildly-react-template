@@ -97,7 +97,7 @@ const Login = ({ history }) => {
   };
 
   return (
-    <Container className="blue-background" maxWidth="xl">
+    <Container className="blue-background" maxWidth="xxl">
       <Container
         component="main"
         maxWidth="xs"

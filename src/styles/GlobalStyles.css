@@ -40,3 +40,12 @@ body{
     padding: 3px 0px 0px 13px;
     background-color: var(--color-palette-background-light3);
 }
+
+.copyrightText{
+    margin-top: 20px;
+    color:var(--color-palette-lightbeige-main);
+}
+
+.Mui-disabled{
+    background-color:var(--color-palette-disabled-main) !important;
+}

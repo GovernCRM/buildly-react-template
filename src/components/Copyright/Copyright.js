@@ -6,7 +6,7 @@ import { AppContext } from '@context/App.context';
 const Copyright = () => {
   const { title } = useContext(AppContext);
   return (
-    <Typography variant="body2" color="white" align="center" style={{ marginTop: '20px', color: 'white' }}>
+    <Typography variant="body2" align="center" className="copyrightText">
       {'Copyright © '}
       <Link color="inherit" href="https://example.com/" target="_blank">
         {title}

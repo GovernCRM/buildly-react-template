@@ -4,7 +4,7 @@ export const fetchStateRecords = async (displayAlert) => {
   try {
     const response = await httpService.makeRequest(
       'get',
-      `${window.env.STATE_RECORDS_URL}`,
+      `${window.env.fl_RECORDS_URL}`,
       null,
       true,
     );

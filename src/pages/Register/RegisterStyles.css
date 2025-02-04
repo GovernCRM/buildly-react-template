@@ -40,5 +40,5 @@
 }
 
 .Registerlink{
-  color: #003049 !important;
+  color: var(--color-palette-primary-main) !important;
 }

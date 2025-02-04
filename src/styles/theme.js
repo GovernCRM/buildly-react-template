@@ -35,6 +35,9 @@ const theme = extendTheme({
         lightbeige: {
           main: '#FDF0D5',
         },
+        disabled: {
+          main: '#780000A1',
+        },
         white: {
           main: '#FFFFFF',
         },
@@ -119,6 +122,7 @@ const theme = extendTheme({
       md: 960,
       lg: 1280,
       xl: 1920,
+      xxl: 3000,
     },
   },
   components: {

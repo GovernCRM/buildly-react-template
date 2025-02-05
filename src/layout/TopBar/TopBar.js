@@ -85,7 +85,7 @@ const TopBar = ({
         >
           <MenuIcon />
         </IconButton>
-        <button type="button" onClick={() => history.push(routes.DASHBOARD)} className="topbar-logo-button">
+        <button type="button" onClick={() => history.push(routes.COMMUNITY)} className="topbar-logo-button">
           <img
             src={logo}
             className="topbarLogo"

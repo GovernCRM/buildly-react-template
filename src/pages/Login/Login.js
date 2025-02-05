@@ -37,7 +37,7 @@ const Login = ({ history }) => {
 
   const { mutate: resetPasswordCheckMutation, isLoading: isPasswordCheck } = useResetPasswordCheckMutation(history, routes.RESET_PASSWORD_CONFIRM, routes.LOGIN, displayAlert);
 
-  const { mutate: loginMutation, isLoading: islogin, isError: isLoginError } = useLoginMutation(history, (location.state && location.state.from) || routes.DASHBOARD, displayAlert);
+  const { mutate: loginMutation, isLoading: islogin, isError: isLoginError } = useLoginMutation(history, (location.state && location.state.from) || routes.COMMUNITY, displayAlert);
 
   useEffect(() => {
     if (location.pathname.includes(routes.RESET_PASSWORD_CONFIRM)) {

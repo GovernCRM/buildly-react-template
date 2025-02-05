@@ -3,24 +3,12 @@ import { Button } from '@mui/material';
 import {
   Box, Typography, Container, Paper,
 } from '@mui/material';
-import './DashboardStyles.css';
+import './CommunityStyles.css';
 import CustomTable from '@components/CustomTable/CustomTable';
 import { ContactModal } from '@components/Dashboard/CreateContact';
-import useAlert from '@hooks/useAlert';
-import { useQuery } from 'react-query';
-import { fetchStateRecords } from '@react-query/queries/stateRecords/getStateRecordsQuery';
 
-const Dashboard = () => {
+const Community = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { displayAlert } = useAlert();
-
-  const { data: stateRecordData, isLoading: isLoadingStateRecords } = useQuery(
-    ['stateRecords'],
-    () => fetchStateRecords(displayAlert),
-    { refetchOnWindowFocus: false },
-  );
-
-  console.log(stateRecordData, 'dataaa');
 
   return (
     <>
@@ -38,10 +26,10 @@ const Dashboard = () => {
         onClose={() => setIsModalOpen(false)}
       />
       <Box className="DashboardMainTableContainer" maxWidth="xl">
-        <CustomTable data={stateRecordData} />
+        <CustomTable />
       </Box>
     </>
   );
 };
 
-export default Dashboard;
+export default Community;

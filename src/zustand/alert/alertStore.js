@@ -11,7 +11,7 @@ const useStore = create((set) => ({
 }));
 
 const useTabStore = create((set) => ({
-  activeTab: 'Dashboard', // Default tab
+  activeTab: 'Community', // Default tab
   setActiveTab: (tab) => set({ activeTab: tab }),
 }));
 

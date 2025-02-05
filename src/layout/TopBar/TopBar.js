@@ -85,7 +85,7 @@ const TopBar = ({
         >
           <MenuIcon />
         </IconButton>
-        <button type="button" onClick={() => history.push(routes.DASHBOARD)} className="topbar-logo-button">
+        <button type="button" onClick={() => history.push(routes.COMMUNITY)} className="topbar-logo-button">
           <img
             src={logo}
             className="topbarLogo"
@@ -93,7 +93,7 @@ const TopBar = ({
           />
         </button>
         <div className="topbarMenuRight">
-          {options.map((tab) => <Typography sx={{ display: { xs: 'none', md: 'block' } }} variant="subtitle2" className={`topbarheading ${activeTab === tab.label ? 'activetabstyle' : ''}`} onClick={() => { history.push(routes[tab.value.toUpperCase()]); setActiveTab(tab.label); }}>{tab.label}</Typography>)}
+          {options.map((tab) => <Typography sx={{ display: { xs: 'none', md: 'block' } }} variant="subtitle2" className={`topbarheading baskervville-sc-regular ${activeTab === tab.label ? 'activetabstyle' : ''}`} onClick={() => { history.push(routes[tab.value.toUpperCase()]); setActiveTab(tab.label); }}>{tab.label}</Typography>)}
           {isAdmin && (
             <IconButton
               aria-label="admin section"

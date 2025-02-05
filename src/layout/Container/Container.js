@@ -9,8 +9,7 @@ import { routes } from '@routes/routesConstants';
 import { hasAdminRights, hasGlobalAdminRights } from '@utils/permissions';
 import { isMobile } from '@utils/mediaQuery';
 import './ContainerStyles.css';
-import Dashboard from '@pages/Dashboard/Dashboard';
-import Constituent from '@pages/Constituent/Constituent';
+import Community from '@pages/Community/Community';
 import Relationship from '@pages/Relationship/Relationship';
 import Management from '@pages/Management/Management';
 
@@ -19,8 +18,7 @@ const ContainerDashboard = ({ location, history }) => {
   const [navHidden, setNavHidden] = useState(false);
 
   const subNavItems = [
-    { label: 'Dashboard', value: 'dashboard' },
-    { label: 'Constituent', value: 'constituent' },
+    { label: 'Community', value: 'community' },
     { label: 'Relationship', value: 'relationship' },
     { label: 'Management', value: 'management' },
   ];
@@ -41,7 +39,7 @@ const ContainerDashboard = ({ location, history }) => {
           <Route
             exact
             path={routes.APP}
-            render={() => <Redirect to={routes.DASHBOARD} />}
+            render={() => <Redirect to={routes.COMMUNITY} />}
           />
           {(hasAdminRights(userData)
             || hasGlobalAdminRights(userData))
@@ -52,12 +50,8 @@ const ContainerDashboard = ({ location, history }) => {
               />
             )}
           <Route
-            path={routes.DASHBOARD}
-            component={Dashboard}
-          />
-          <Route
-            path={routes.CONSTITUENT}
-            component={Constituent}
+            path={routes.COMMUNITY}
+            component={Community}
           />
           <Route
             path={routes.RELATIONSHIP}

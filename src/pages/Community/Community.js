@@ -6,21 +6,9 @@ import {
 import './CommunityStyles.css';
 import CustomTable from '@components/CustomTable/CustomTable';
 import { ContactModal } from '@components/Dashboard/CreateContact';
-import useAlert from '@hooks/useAlert';
-import { useQuery } from 'react-query';
-import { fetchStateRecords } from '@react-query/queries/stateRecords/getStateRecordsQuery';
 
 const Community = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { displayAlert } = useAlert();
-
-  const { data: stateRecordData, isLoading: isLoadingStateRecords } = useQuery(
-    ['stateRecords'],
-    () => fetchStateRecords(displayAlert),
-    { refetchOnWindowFocus: false },
-  );
-
-  console.log(stateRecordData, 'dataaa');
 
   return (
     <>
@@ -38,7 +26,7 @@ const Community = () => {
         onClose={() => setIsModalOpen(false)}
       />
       <Box className="DashboardMainTableContainer" maxWidth="xl">
-        <CustomTable data={stateRecordData} />
+        <CustomTable />
       </Box>
     </>
   );

@@ -31,7 +31,7 @@ const CustomTable = () => {
 
   const offset = paginationModel.page * paginationModel.pageSize;
 
-  const { data, isLoading } = useQuery(
+  const { data, isLoading, isFetching } = useQuery(
     ['stateRecords', offset, paginationModel.pageSize],
     () => fetchStateRecords(displayAlert, offset, paginationModel.pageSize),
     { keepPreviousData: true, refetchOnWindowFocus: false },
@@ -47,7 +47,7 @@ const CustomTable = () => {
     : [];
 
   return (
-    <Box className="custom-table-container">
+    <Box className={`custom-table-container ${isFetching ? 'blurred' : ''}`}>
       {isLoading ? (
         <Box display="flex" justifyContent="center" alignItems="center" height="400px">
           <CircularProgress />
@@ -64,7 +64,7 @@ const CustomTable = () => {
             if (newPagination.page > paginationModel.page && !hasNextPage) return;
             setPaginationModel(newPagination);
           }}
-          loading={isLoading}
+          loading={isFetching}
           checkboxSelection
           rowHeight={42}
           headerHeight={42}

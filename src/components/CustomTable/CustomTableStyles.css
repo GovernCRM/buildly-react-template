@@ -25,7 +25,7 @@
     max-height: 42px !important;
 }
 
-.custom-data-grid .MuiDataGrid-columnHeaderTitle{
+.custom-data-grid .MuiDataGrid-columnHeaderTitle {
     font-family: "Baskervville SC", serif;
 }
 
@@ -77,10 +77,18 @@
     margin: auto;
 }
 
-.custom-data-grid .MuiDataGrid-iconButtonContainer .MuiIconButton-root, .custom-data-grid .MuiDataGrid-menuIcon .MuiDataGrid-menuIconButton{
+.custom-data-grid .MuiDataGrid-iconButtonContainer .MuiIconButton-root,
+.custom-data-grid .MuiDataGrid-menuIcon .MuiDataGrid-menuIconButton {
     color: var(--color-palette-secondary-main);
 }
 
-.MuiDataGrid-columnHeaderTitleContainerContent .MuiButtonBase-root .MuiSvgIcon-root{
+.MuiDataGrid-columnHeaderTitleContainerContent .MuiButtonBase-root .MuiSvgIcon-root {
     fill: var(--color-palette-secondary-main);
+}
+
+.blurred .MuiDataGrid-main {
+    filter: blur(1px);
+    pointer-events: none;
+    opacity: 0.9;
+    transition: all 0.3s ease-in-out;
 }

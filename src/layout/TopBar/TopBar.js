@@ -12,6 +12,7 @@ import {
   Settings as SettingsIcon,
 } from '@mui/icons-material';
 import logo from '@assets/topbar2-logo.png';
+import logo2 from '@assets/topbartext-logo.png';
 import { getUser } from '@context/User.context';
 import { oauthService } from '@modules/oauth/oauth.service';
 import { routes } from '@routes/routesConstants';
@@ -88,6 +89,13 @@ const TopBar = ({
         <button type="button" onClick={() => history.push(routes.COMMUNITY)} className="topbar-logo-button">
           <img
             src={logo}
+            className="topbarLogo"
+            alt="Company text logo"
+          />
+        </button>
+        <button type="button" onClick={() => history.push(routes.COMMUNITY)} className="topbartext-logo-button">
+          <img
+            src={logo2}
             className="topbarLogo"
             alt="Company text logo"
           />

@@ -7,7 +7,6 @@
 
 .activetabstyle {
   color: var(--color-palette-background-light3) !important;
-  border-bottom: 4px solid var(--color-palette-lightbeige-main);
 }
 
 .topbarMenuButton {
@@ -28,7 +27,6 @@
 }
 
 .topbarheading{
-  font-weight: 600;
   cursor: pointer;
   user-select: none;
   color:var(--color-palette-secondary-main);
@@ -56,12 +54,16 @@
   border: 1px solid var(--color-palette-background-light2);
 }
 
-.topbar-logo-button{
+.topbar-logo-button, .topbartext-logo-button{
   background:none;
   border:none;
   cursor: pointer;
   padding: 0;
   display: flex;
+}
+
+.topbartext-logo-button{
+  margin-left: 20px;
 }
 
 @media screen and (max-width: 600px) {

@@ -1,5 +1,6 @@
 export const routes = {
   LOGIN: '/login',
+  EMAIL_VERIFICATION: '/verify-email/:token',
   REGISTER: '/register',
   RESET_PASSWORD: '/reset-password',
   VERIFICATION: '/verification',

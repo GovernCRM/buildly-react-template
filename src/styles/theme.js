@@ -21,7 +21,7 @@ const theme = extendTheme({
           secondary: '#F9D658',
           tertiary: '#003049',
           black: '#000',
-          border: '#ddd',
+          border: '#003049',
         },
         primary: {
           main: '#780000',
@@ -59,7 +59,7 @@ const theme = extendTheme({
   typography: {
     fontFamily: 'League Spartan',
     fontWeight: 400,
-    color: '#000000 !important',
+    color: '#003049 !important',
     button: {
       textTransform: 'none',
     },

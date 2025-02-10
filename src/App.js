@@ -25,6 +25,7 @@ import {
   Experimental_CssVarsProvider as CssVarsProvider,
 } from '@mui/material/styles';
 import Community from '@pages/Community/Community';
+import VerifyEmail from '@pages/EmailVerification/EmailVerification';
 
 const App = () => (
   <Router>
@@ -46,6 +47,10 @@ const App = () => (
             <Route
               path={routes.REGISTER}
               component={Register}
+            />
+            <Route
+              path={routes.EMAIL_VERIFICATION}
+              component={VerifyEmail}
             />
             <Route
               path={routes.RESET_PASSWORD}

@@ -49,3 +49,12 @@ body{
 .loginForm .Mui-disabled, .registerForm .Mui-disabled, .resetPasswordForm .Mui-disabled, .verificationPaper .Mui-disabled{
     background-color:var(--color-palette-disabled-main) !important;
 }
+
+.MuiInputLabel-root{
+    color:var(--color-palette-tertiary-main);
+}
+
+input, .MuiOutlinedInput-root, input:-webkit-autofill {
+    color:var(--color-palette-tertiary-main) !important;
+    -webkit-text-fill-color: var(--color-palette-tertiary-main) !important;
+}
